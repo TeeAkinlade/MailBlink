@@ -1,96 +1,125 @@
-"use client"
+"use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-// import DialogButton from "../components/Dialog";
+import { CreateCampaignForm } from "./CreateCampaignForm";
+import { CampaingList } from "./CampaingList";
 
 const CampaignsDetails = () => {
-  const [groups, setGroups] = useState([]);
-  const [campaign, setCampaign] = useState({
-    id: 0,
-    name: "",
-    subject: "",
-    from_name: "",
-    from_email: "",
-  });
+  const [campaigns, setCampaigns] = useState([]);
+  const [draftCampaigns, setDraftCampaigns] = useState([]);
+  const [sentCampaigns, setSentCampaigns] = useState([]);
+
+  const [showingSent, setShowingSent] = useState(false);
+  const [showingDraft, setShowingDraft] = useState(true);
 
   useEffect(() => {
-    // In the future the fetching of the groups will be done here
-    setGroups([
-      { id: 1, name: "group1" },
-      { id: 2, name: "group2" },
-      { id: 3, name: "group3" },
+    //TODO: This will be used to fetch the campaigns later
+    setCampaigns([
+      {
+        id: 0,
+        name: "campaign1",
+        subject: "subject1",
+        from_name: "fromName1",
+        from_email: "from1@email.com",
+        status: "sent",
+      },
+      {
+        id: 1,
+        name: "campaign2",
+        subject: "subject2",
+        from_name: "fromName2",
+        from_email: "from2@email.com",
+        status: "draft",
+      },
+      {
+        id: 2,
+        name: "campaign3",
+        subject: "subject3",
+        from_name: "fromName3",
+        from_email: "from3@email.com",
+        status: "draft",
+      },
     ]);
-
-    //When there is backend the function that will fetch the proper campaign id will go here
-    //Also the function that will relate the created campaign with the chosen group
   }, []);
 
-  const handleSubmit = (e) => {
-    //Here will be the code to send campaign to the db
-    return;
-  };
+  useEffect(() => {
+    //Separate sent/drafted campaigns, //TODO: in the future it will be fetched from supabase
+    // Filtering campaigns based on their status
+    const sent = campaigns.filter((campaign) => campaign.status === "sent");
+    const drafts = campaigns.filter((campaign) => campaign.status === "draft");
+
+    setSentCampaigns(sent);
+    setDraftCampaigns(drafts);
+  }, [campaigns]);
 
   return (
     <>
-      <header>
-        <article>Campaign details</article>
+      <header className="mx-10 py-5 ">
+        <div className="flex justify-between">
+          <article className="w-full text-center text-4xl font-bold text-ui_primary lg:text-left">
+            <h1>Campaign details</h1>
+          </article>
+          <div className="hidden w-60 lg:block">
+            <CreateCampaignForm />
+          </div>
+        </div>
+
+        {/* Mobile campaign selection */}
+        <select id="select-campaign" className="mt-5 md:hidden">
+          <option value="draft">Drafts</option>
+          <option value="sent">Sent</option>
+        </select>
+
+        {/* Desktop campaign selection */}
+        <ul className="hidden md:flex gap-6 font-semibold mt-5 border-b-[1px]">
+          {/* Sent tab */}
+          <li
+            className={`flex flex-shrink pb-3 border-b-2 transition-all hover:cursor-pointer  ${
+              showingSent
+                ? "border-ui_secondary1"
+                : "border-transparent hover:scale-95"
+            }`}
+            onClick={() => {
+              setShowingSent(true);
+              setShowingDraft(false);
+            }}
+          >
+            <div className="flex gap-2 items-center">
+              <span>Sent</span>
+              <span className="bg-slate-200 py-1 px-2 rounded-md">
+                {sentCampaigns.length}
+              </span>
+            </div>
+          </li>
+
+          {/* Draft tab */}
+          <li
+            className={`flex flex-shrink pb-3 border-b-2 transition-all hover:cursor-pointer  ${
+              !showingSent
+                ? "border-ui_secondary1"
+                : "border-transparent hover:scale-95"
+            }`}
+            onClick={() => {
+              setShowingDraft(true);
+              setShowingSent(false);
+            }}
+          >
+            <div className="flex gap-2 items-center">
+              <span>Drafts</span>
+              <span className="bg-slate-200 py-1 px-2 rounded-md">
+                {draftCampaigns.length}
+              </span>
+            </div>
+          </li>
+        </ul>
       </header>
 
-      {/* Form */}
-      <section>
-        <form action="" className="flex flex-col">
-          {/* Campaign name */}
-          <label htmlFor="campaign-name">Campaign name</label>
-          <input
-            id="campaign-name"
-            type="text"
-            name="campaign-name"
-            placeholder="Campaign"
-            required
-          />
-
-          {/* Subject */}
-          <label htmlFor="campaign-sender-name">Sender</label>
-          <div className="flex">
-            <input
-              id="campaign-sender-name"
-              type="text"
-              name="campaign-sender-name"
-              placeholder="Name of the sender"
-              required
-            />
-            <input
-              id="campaign-sender-email"
-              type="email"
-              name="campaign-sender-email"
-              placeholder="Email of the sender"
-              required
-            />
-          </div>
-
-          {/* Recipients */}
-          <label htmlFor="campaign-name">Recipients</label>
-          <select name="" id="">
-            <option value="">Select recipient group</option>
-            {groups.map((group) => (
-              <option key={group.id} id={group.id} value={group.id}>
-                {group.name}
-              </option>
-            ))}
-          </select>
-
-          {/* Button */}
-          <section>
-            <Link href={`campaigns/${campaign.id}/email`}>
-              <button className="btn" type="submit" onClick={handleSubmit}>
-                Next: Content
-              </button>
-            </Link>
-          </section>
-          {/* Add condition that if the fields are not filled then this button is greyed out */}
-          {/* <DialogButton></DialogButton> */}
-        </form>
+      <section className="mx-10 mt-5 mb-10 bg-white rounded-md p-6">
+        {showingSent ? (
+          <CampaingList campaigns={sentCampaigns} />
+        ) : (
+          <CampaingList campaigns={draftCampaigns} />
+        )}
       </section>
     </>
   );
