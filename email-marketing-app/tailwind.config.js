@@ -7,11 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        Roboto: ["Roboto Slab"],
+        Poppins: ["Poppins"]
       },
+      colors:{
+        backGround: '#E5E5E5',
+        navyBlue: '#001F3F',
+        lightBlue: '#0070F0',
+        forestGreen: '#228B22',
+        primaryBlack: '#575757',
+      }
     },
   },
   plugins: [],
