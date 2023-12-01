@@ -1,2 +1,2 @@
-# MailBlink | 
-This is the code repo for MailBlink email marketing service platform.
+# MailBlink  
+This is the code repo for the MailBlink email marketing service platform.
