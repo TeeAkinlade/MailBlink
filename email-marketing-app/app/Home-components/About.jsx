@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const About = () => {
   return (
-    <section className='mx-auto max-w-6xl'>
-        <div className="grid grid-cols-2 my-28 items-center gap-28">
+    <section className='mx-auto max-w-7xl'>
+        <div className="grid grid-cols-2 py-28 items-center gap-40">
             <div className="">
                 <Image src='/image/Group 1000000895.svg' alt='About image' width='100' height='100' className='w-full' />
             </div>

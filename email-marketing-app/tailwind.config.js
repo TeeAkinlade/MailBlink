@@ -6,6 +6,12 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+    },
     extend: {
       fontFamily: {
         Roboto: ["Roboto Slab"],
@@ -14,9 +20,13 @@ module.exports = {
       colors:{
         backGround: '#E5E5E5',
         navyBlue: '#001F3F',
-        lightBlue: '#0070F0',
         forestGreen: '#228B22',
         primaryBlack: '#575757',
+        primaryBlack2: '#202020',
+        ui_primary: "#1F284F",
+        ui_secondary1: "#0070F0",
+        tertiary: "#FAFBFC",
+        linear: '#F5F0FF',
       }
     },
   },

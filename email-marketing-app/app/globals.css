@@ -14,3 +14,18 @@
 body{
   background-color: #FAFBFC;
 }
+
+nav .signUp{
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(to right, #001F3F 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .9s ease-in-out;
+}
+
+nav .signUp:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
+}
