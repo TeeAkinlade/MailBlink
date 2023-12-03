@@ -1,31 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-family: "Poppins";
-  }
+.bg-secondary {
+  @apply bg-gradient-to-br from-[#F5F0FF] via-[#EFF6FE] to-[#EDFAF5];
 }
 
-body{
-  background-color: #FAFBFC;
+/* Form styles since all of them are the same */
+
+.form {
+  @apply text-slate-500 flex flex-col gap-5;
 }
 
-nav .signUp{
-  border: none;
-  border-radius: 24px;
-  background: linear-gradient(to right, #001F3F 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all .9s ease-in-out;
+.form label {
+  @apply text-xs font-medium;
 }
 
-nav .signUp:hover {
-  background-position: left bottom;
-  color: white;
-  border: none;
+.form input,
+select, textarea {
+  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3;
+}
+
+.form button {
+  @apply btn bg-ui_secondary1 hover:bg-ui_primary;
+}
+
+.btn {
+  @apply flex justify-center items-center text-white w-full py-3 px-4 font-semibold text-base rounded-full transition-all hover:scale-95;
 }
