@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
@@ -14,21 +14,28 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        Roboto: ["Roboto Slab"],
-        Poppins: ["Poppins"]
+        poppins: ["Poppins", "sans-serif"],
       },
-      colors:{
-        backGround: '#E5E5E5',
-        navyBlue: '#001F3F',
-        forestGreen: '#228B22',
-        primaryBlack: '#575757',
-        primaryBlack2: '#202020',
+      colors: {
         ui_primary: "#1F284F",
         ui_secondary1: "#0070F0",
         tertiary: "#FAFBFC",
-        linear: '#F5F0FF',
-      }
+      },
+      keyframes: {
+        "animate-fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "animate-fade-out": {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+      },
+      animation: {
+        "fade-in": "animate-fade-in 0.4s ease-out backwards",
+        "fade-out": "animate-fade-out 0.4s ease-out forwards",
+      },
     },
+    plugins: [],
   },
-  plugins: [],
-}
+};
