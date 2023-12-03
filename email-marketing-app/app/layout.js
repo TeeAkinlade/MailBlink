@@ -1,5 +1,5 @@
-import './globals.css'
 import { Poppins } from "next/font/google";
+import "./globals.css";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
@@ -8,14 +8,14 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: 'Email marketing Website',
-  description: 'An Email amrketing platform for Digistem',
-}
+  title: "MailBlink - One-stop Email Marketing Services",
+  description: "Email and SMS Marketing Services",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='font-poppins min-h-screen bg-secondary'>{children}</body>
+      <body className="font-poppins min-h-screen bg-secondary">{children}</body>
     </html>
-  )
+  );
 }
