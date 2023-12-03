@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <div className='mx-auto max-w-7xl'>
         <div className="mt-16 mb-8">
-            <div className="pt-16 pb-8">
+            <div className="pt-16 pb-8 px-8 md:px-0">
                 <div className="grid grid-cols-5 gap-20">
-                  <div className="col-span-2">
-                    <p className="text-3xl font-Roboto font-semibold mb-8 text-primaryBlack2">MailBlink.io</p>
+                  <div className="col-span-5 md:col-span-2">
+                    <p className="text-xl md:text-3xl font-Roboto font-semibold mb-8 text-primaryBlack2">MailBlink.io</p>
                     <p className="mb-4 text-primaryBlack font-medium text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non leo at justo posuere luctus. Maecenas id mauris sit.</p>
                     <div className="">
                       <div className="">
@@ -31,42 +31,42 @@ const Footer = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-3">
+                  <div className="col-span-5 md:col-span-3">
                     <FooterLink />
                   </div>
                 </div>
                 <hr  className='my-10'/>
                 <div className="grid grid-cols-5 gap-20">
-                  <div className="col-span-2">
+                  <div className="col-span-5 md:col-span-2">
                     <p className="text-lg font-Roboto font-semibold mb-8 text-primaryBlack2">Reach us</p>
                     <div className="">
                       <div className="flex items-center space-x-3">
                         <Image src="/image/email-icon.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-sm">Support: <span className="font-normal">hello@landify.co</span></p>
+                        <p className="font-semibold text-primaryBlack text-xs md:text-sm">Support: <span className="font-normal">hello@landify.co</span></p>
                       </div>
                       <div className="flex items-center space-x-3 py-4">
                         <Image src="/image/Mobile.svg" alt="certification" width="20" height="20"  />
-                        <p className="font-semibold text-primaryBlack text-sm">General: <span className="font-normal">+91 98765 43210</span></p>
+                        <p className="font-semibold text-primaryBlack text-xs md:text-sm">General: <span className="font-normal">+91 98765 43210</span></p>
                       </div>
                       <div className="flex items-center space-x-3">
                         <Image src="/image/Location.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-sm max-w-[200px]">Lagos Office: <span className="font-normal">772 Ikeja, Ave
+                        <p className="font-semibold text-primaryBlack text-xs md:text-sm md:max-w-[200px]">Lagos Office: <span className="font-normal">772 Ikeja, Ave
                         Lagos, NIG 91789</span></p>
                       </div>
                       <div className="flex items-center space-x-3 py-4">
                         <Image src="/image/Location.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-sm max-w-[200px]">Enugu Office: <span className="font-normal">772 Enugu Ave, NairaTriangle, NIG 91789</span></p>
+                        <p className="font-semibold text-primaryBlack text-xs md:text-sm md:max-w-[200px]">Enugu Office: <span className="font-normal">772 Enugu Ave, NairaTriangle, NIG 91789</span></p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-span-3">
+                  <div className="col-span-5 md:col-span-3">
                     <FooterLink />
                   </div>
                 </div>
                 <hr  className='my-10'/>
                 <div className="flex justify-between items-center">
-                  <Link href='#' className="text-primaryBlack hover:text-navyBlue text-sm">MailBlink 2023. All rights reserved</Link>
-                  <Link href='#' className="text-primaryBlack hover:text-navyBlue text-sm">Terms & Privacy</Link>
+                  <Link href='#' className="text-primaryBlack hover:text-navyBlue text-xs md:text-sm">MailBlink 2023. All rights reserved</Link>
+                  <Link href='#' className="text-primaryBlack hover:text-navyBlue text-xs md:text-sm">Terms & Privacy</Link>
                 </div>
             </div>
         </div>
