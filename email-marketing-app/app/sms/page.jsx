@@ -1,43 +1,37 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CreateCampaignForm } from "./CreateCampaignForm";
-import { CampaingList } from "./CampaingList";
+import { CreateSMSForm } from "./CreateSMSForm";
+import { SMSList } from "./SMSList";
 
-const CampaignsDetails = () => {
-  const [campaigns, setCampaigns] = useState([]);
-  const [draftCampaigns, setDraftCampaigns] = useState([]);
-  const [sentCampaigns, setSentCampaigns] = useState([]);
+const SmsDetails = () => {
+  const [smsCampaigns, setSmsCampaigns] = useState([]);
+  const [draftSms, setDraftSms] = useState([]);
+  const [sentSms, setSentSms] = useState([]);
 
   const [showingSent, setShowingSent] = useState(false);
   const [showingDraft, setShowingDraft] = useState(true);
 
   useEffect(() => {
     //TODO: This will be used to fetch the campaigns later
-    setCampaigns([
+    setSmsCampaigns([
       {
         id: 0,
         name: "campaign1",
-        subject: "subject1",
-        from_name: "fromName1",
-        from_email: "from1@email.com",
+        from_number: "+15017122661",
         status: "sent",
       },
       {
         id: 1,
         name: "campaign2",
-        subject: "subject2",
-        from_name: "fromName2",
-        from_email: "from2@email.com",
+        from_number: "+15017122661",
         status: "draft",
       },
       {
         id: 2,
-        name: "campaign3",
-        subject: "subject3",
-        from_name: "fromName3",
-        from_email: "from3@email.com",
-        status: "draft",
+        name: "campaign2",
+        from_number: "+15017122661",
+        status: "sent",
       },
     ]);
   }, []);
@@ -45,22 +39,24 @@ const CampaignsDetails = () => {
   useEffect(() => {
     //Separate sent/drafted campaigns, //TODO: in the future it will be fetched from supabase
     // Filtering campaigns based on their status
-    const sent = campaigns.filter((campaign) => campaign.status === "sent");
-    const drafts = campaigns.filter((campaign) => campaign.status === "draft");
+    const sent = smsCampaigns.filter((campaign) => campaign.status === "sent");
+    const drafts = smsCampaigns.filter(
+      (campaign) => campaign.status === "draft"
+    );
 
-    setSentCampaigns(sent);
-    setDraftCampaigns(drafts);
-  }, [campaigns]);
+    setSentSms(sent);
+    setDraftSms(drafts);
+  }, [smsCampaigns]);
 
   return (
     <>
       <header className="mx-10 py-5 ">
         <div className="flex justify-between">
           <article className="w-full text-center text-4xl font-bold text-ui_primary lg:text-left">
-            <h1>Campaign details</h1>
+            <h1>SMS Campaign details</h1>
           </article>
           <div className="hidden w-60 lg:block">
-            <CreateCampaignForm />
+            <CreateSMSForm />
           </div>
         </div>
 
@@ -87,7 +83,7 @@ const CampaignsDetails = () => {
             <div className="flex gap-2 items-center">
               <span>Sent</span>
               <span className="bg-slate-200 py-1 px-2 rounded-md">
-                {sentCampaigns.length}
+                {sentSms.length}
               </span>
             </div>
           </li>
@@ -107,7 +103,7 @@ const CampaignsDetails = () => {
             <div className="flex gap-2 items-center">
               <span>Drafts</span>
               <span className="bg-slate-200 py-1 px-2 rounded-md">
-                {draftCampaigns.length}
+                {draftSms.length}
               </span>
             </div>
           </li>
@@ -116,13 +112,13 @@ const CampaignsDetails = () => {
 
       <section className="mx-10 mt-5 mb-10 bg-white rounded-md p-6">
         {showingSent ? (
-          <CampaingList campaigns={sentCampaigns} />
+          <SMSList smsCampaigns={sentSms} />
         ) : (
-          <CampaingList campaigns={draftCampaigns} />
+          <SMSList smsCampaigns={draftSms} />
         )}
       </section>
     </>
   );
 };
 
-export default CampaignsDetails;
+export default SmsDetails;
