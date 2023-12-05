@@ -1,7 +1,3 @@
-"use client";
-
-import Image from "next/image";
-
 import About from "../components/About";
 import Campaign from "../components/Campaign";
 import Footer from "../components/Footer";

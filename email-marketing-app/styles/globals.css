@@ -8,23 +8,31 @@
 
 /* Form styles since all of them are the same */
 
-.form {
+form {
   @apply text-slate-500 flex flex-col gap-5;
 }
 
-.form label {
+label {
   @apply text-xs font-medium;
 }
 
-.form input,
+input[type="text"],
 select, textarea {
-  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3;
+  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3 mt-2;
 }
 
-.form button {
+form button {
   @apply btn bg-ui_secondary1 hover:bg-ui_primary;
 }
 
 .btn {
-  @apply flex justify-center items-center text-white w-full py-3 px-4 font-semibold text-base rounded-full transition-all hover:scale-95;
+  @apply flex justify-center items-center text-white w-full py-4 px-8 font-semibold md:text-base text-sm rounded-full transition-all hover:scale-95;
+}
+
+input:checked + label {
+  color: black;
+}
+
+button {
+  @apply transition-all hover:scale-95 cursor-pointer
 }
