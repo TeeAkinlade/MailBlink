@@ -86,7 +86,7 @@ const page = () => {
                     <Image src='/assets/images/Group 2936.svg' className='flex justify-end ms-[6rem]' width='172' height='23' />
                 </div>
                 <div className='lg:w-[720px] h-[100vh] bg-[#fff] lg:ps-[109px] lg:pt-[160px] xs:pt-[100px] xs:ps-[10px] xs:px-[0.85rem] md:px-[0.85rem]'>
-                    <h3 className='text-[#17181A] text-[24px] font-[600] leading-[32px] font-Poppins ms-[9rem] md:ms-[20rem]'>Login</h3>
+                    <h3 className='text-[#17181A] text-[24px] font-[600] leading-[32px] font-Poppins lg:ms-[9rem] xs:ms-[9rem] md:ms-[20rem]'>Login</h3>
                     <form className='mt-[16px]' onSubmit={handleSubmit}>
                         <label className='text-[#515458] text-[12px] font-[500] font-Poppins mt-[22px]'>user name</label><br />
                         <input type='text' placeholder='enter user name'
