@@ -14,7 +14,7 @@ const Services = () => {
                         <IoMdMail size={50} className='text-[#3CBA79]' />
                         <h3 className="text-xl md:text-2xl font-semibold text-primaryBlack2 py-4 font-Roboto">Email</h3>
                         <p className='text-primaryBlaxck mb-8 text-sm md:text-base'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae optio natus officiis nesciunt eum repellendus commodi aliquam aperiam odit, iure illo ab esse molestias recusandae beatae ipsam, laudantium cum at.</p>
-                        <Link href='#' className='py-2.5 px-4 rounded-full hover:translate-y-2 text-sm md:text-base bg-navyBlue text-white'>Learn More</Link>
+                        <Link href='/features/email-marketing' className='py-2.5 px-4 rounded-full hover:translate-y-2 text-sm md:text-base bg-navyBlue text-white'>Learn More</Link>
                     </div>
                     <div className="py-8 bg-backGround shadow-xl p-8 rounded-lg">
                         <FaSms size={50} className='text-[#3CBA79]' />

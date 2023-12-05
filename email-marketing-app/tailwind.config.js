@@ -14,13 +14,11 @@ module.exports = {
       xl: "1440px",
     },
     extend: {
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
       colors: {
         ui_primary: "#1F284F",
         ui_secondary1: "#0070F0",
         tertiary: "#FAFBFC",
+        Ash: "#575757"
       },
       keyframes: {
         "animate-fade-in": {

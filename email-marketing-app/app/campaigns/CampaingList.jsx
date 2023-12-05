@@ -1,6 +1,6 @@
 import Image from "next/image";
-import search from "@/public/icons/search.icon.svg";
-import deleteIcon from "@/public/icons/delete.icon.svg";
+import search from "@/public/assets/icons/search.icon.svg";
+import deleteIcon from "@/public/assets/icons/delete.icon.svg";
 
 export const CampaingList = ({ campaigns }) => {
   return (
