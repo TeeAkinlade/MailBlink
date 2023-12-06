@@ -1,25 +1,111 @@
-import Image from 'next/image'
-import Link from 'next/link'
+"use client";
+import Image from "next/image";
+import { useState } from "react";
 
 const About = () => {
-  return (
-    <section className='bg-backGround'>
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 px-8 md:px-0 py-16 md:py-28 items-center md:gap-40">
-          <h2 className="font-Roboto font-semibold text-3xl text-center text-navyBlue mb-10 md:hidden">About Us</h2>
-            <div className="">
-                <Image src='/image/Group 1000000895.svg' alt='About image' width='100' height='100' className='w-full' />
-            </div>
-            <div className="mt-10 md:mt-0">
-                <h2 className="font-Roboto font-semibold text-5xl text-navyBlue mb-10 hidden md:block">About Us</h2>
-                <h3 className="text-navyBlue font-semibold leading-[28px] mb-4 text-lg">Who are we? MailBlink is a team of talented individuals working together to make software people love.</h3>
-                <p className="text-primaryBlack leading-[28px] mb-8">We develop multi-award winning enterprise-class software that helps IT teams audit IT environments.</p>
-                <Link href='/about' className='bg-navyBlue text-white px-4 py-2 rounded-full hover:text-navyBlue hover:bg-white hover:border hover:border-navyBlue hover:text-medium'>Read More</Link>
-            </div>
-        </div>
-      </div>
-    </section>
-  )
-}
+  const [email, setEmail] = useState("");
 
-export default About
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <>
+      <section className="overflow-hidden pb-20 pt-35 md:pt-40 xl:pb-25 xl:pt-46 bg-backGround">
+        <div className="mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
+          <div className="flex lg:items-center lg:gap-8 xl:gap-32.5">
+            <div className=" md:w-1/2">
+              <h4 className="mb-4.5 text-lg font-medium text-black dark:text-white">
+                About Us
+              </h4>
+              <h1 className="mb-5 pr-16 text-3xl font-bold text-black dark:text-white xl:text-hero ">
+                MailBlink
+                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark ">
+                  Email Marketing Software
+                </span>
+              </h1>
+              <p>
+                Who are we? MailBlink is a team of talented individuals working together to make software people love.
+              </p>
+              <p>
+                We develop multi-award winning enterprise-class software that helps IT teams audit IT environments.
+              </p>
+
+              <div className="mt-10">
+                <form onSubmit={handleSubmit}>
+                  <div className="flex flex-wrap gap-5">
+                    {/* <input
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      type="text"
+                      placeholder="Enter your email address"
+                      className="rounded-full border border-stroke px-6 py-2.5 shadow-solid-2 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
+                    /> */}
+                    <button
+                      aria-label="get started button"
+                      className="flex rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+                    >
+                      Contact Us
+                    </button>
+                    <button
+                      aria-label="get started button"
+                      className="flex rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
+                    >
+                      Book A Demo
+                    </button>
+                  </div>
+                </form>
+
+                {/* <p className="mt-5 text-black dark:text-white">
+                  Try for free no credit card required.
+                </p> */}
+              </div>
+            </div>
+
+            <div className="animate_right hidden md:w-1/2 lg:block">
+              <div className="relative 2xl:-mr-7.5">
+                <Image
+                  src="/assets/images/About-hero.svg"
+                  alt="shape"
+                  width={46}
+                  height={246}
+                  className="absolute -left-11.5 top-0"
+                />
+                <Image
+                  src="/assets/images/About-hero.svg"
+                  alt="shape"
+                  width={36.9}
+                  height={36.7}
+                  className="absolute bottom-0 right-0 z-10"
+                />
+                <Image
+                  src="/assets/images/About-hero.svg"
+                  alt="shape"
+                  width={21.64}
+                  height={21.66}
+                  className="absolute -right-6.5 bottom-0 z-1"
+                />
+                <div className=" relative aspect-[700/444] w-full">
+                  <Image
+                    className="shadow-solid-l dark:hidden"
+                    src="/assets/images/About-hero.svg"
+                    alt="Hero"
+                    fill
+                  />
+                  <Image
+                    className="hidden shadow-solid-l dark:block"
+                    src="/assets/images/About-hero.svg"
+                    alt="Hero"
+                    fill
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default About;
