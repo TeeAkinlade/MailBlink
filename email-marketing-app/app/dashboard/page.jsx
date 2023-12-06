@@ -1,7 +1,7 @@
 'use client';
-import Sidebar from './Sidebar';
-import Navbar from './Navbar';
-import Home from './Home';
+import Sidebar from './components/Sidebar';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 export default function page() {
 	return (

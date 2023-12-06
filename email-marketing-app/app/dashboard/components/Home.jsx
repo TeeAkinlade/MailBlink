@@ -3,8 +3,8 @@ import { HiOutlineBolt } from 'react-icons/hi2';
 import { SlEye } from 'react-icons/sl';
 import { MdArrowForwardIos } from 'react-icons/md';
 import { SlPeople } from 'react-icons/sl';
-import BarChart from './Charts/BarChart';
-import RadialChart from './Charts/RadialChart';
+import BarChart from '../Charts/BarChart';
+import RadialChart from '../Charts/RadialChart';
 
 export default function Home() {
 	return (
