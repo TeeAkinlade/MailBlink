@@ -1,11 +1,10 @@
-import About from "./Home-components/About";
-import Campaign from "./Home-components/Campaign";
-import Footer from "./Home-components/Footer";
-import Hero from "./Home-components/Hero";
-import Nav from "./Home-components/Nav";
-import Services from "./Home-components/Services";
-import Subscribe from "./Home-components/Subscribe";
-
+import About from "../components/About";
+import Campaign from "../components/Home-components/Campaign";
+import Footer from "../components/Home-components/Footer";
+import Hero from "../components/Home-components/Hero";
+import Nav from "../components/Home-components/Nav";
+import Services from "../components/Home-components/Services";
+import Subscribe from "../components/Home-components/Subscribe";
 
 export default function Home() {
   return (
