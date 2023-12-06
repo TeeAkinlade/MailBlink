@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,4 +29,19 @@ select, textarea {
 
 .btn {
   @apply flex justify-center items-center text-white w-full py-3 px-4 font-semibold text-base rounded-full transition-all hover:scale-95;
+}
+
+nav .signUp{
+  border-radius: 24px;
+  padding: 8px 24px;
+  background: linear-gradient(to right, #001F3F 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .9s ease-in-out;
+}
+
+nav .signUp:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
 }

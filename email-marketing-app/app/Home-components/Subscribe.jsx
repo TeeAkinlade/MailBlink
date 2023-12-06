@@ -13,7 +13,7 @@ const Subscribe = () => {
                 <div className="flex flex-col">
                     <input type="text" placeholder='Email Address' className='placeholder:text-[#BBB5E0] placeholder:text-sm md:placeholder:text-lg w-full rounded-lg p-2 md:p-4 outline-none' />
                     <input type="text" placeholder='Password' className='placeholder:text-[#BBB5E0] placeholder:text-sm md:placeholder:text-lg w-full my-4 rounded-lg p-2 md:p-4 outline-none'/>
-                    <button className='text-white bg-forestGreen w-full rounded-lg p-2 md:p-4 uppercase text-sm md:text-lg font-semibold'>Get Started</button>
+                    <button className='text-white bg-forestGreen w-full rounded-lg p-2 md:p-4 uppercase text-sm md:text-lg font-semibold hover:bg-[#257425] transition duration-300'>Get Started</button>
                 </div>
             </div>
         </div>

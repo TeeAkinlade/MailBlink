@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import FooterLink from './FooterLink'
+import { contacts, socialMediaLinks } from './data'
 
 const Footer = () => {
   return (
@@ -9,25 +10,19 @@ const Footer = () => {
             <div className="pt-16 pb-8 px-8 md:px-0">
                 <div className="grid grid-cols-5 gap-20">
                   <div className="col-span-5 md:col-span-2">
-                    <p className="text-xl md:text-3xl font-Roboto font-semibold mb-8 text-primaryBlack2">MailBlink.io</p>
-                    <p className="mb-4 text-primaryBlack font-medium text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non leo at justo posuere luctus. Maecenas id mauris sit.</p>
+                    <Link href='/' className="text-xl md:text-3xl font-Roboto font-semibold mb-8 text-primaryBlack2">MailBlink.io</Link>
+                    <p className="my-4 text-primaryBlack font-medium text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non leo at justo posuere luctus. Maecenas id mauris sit.</p>
                     <div className="">
                       <div className="">
                         <Image src="/image/certification.svg" alt="certification" width="100" height="100" className='w-1/2' />
                       </div>
                       <div className="flex items-center space-x-6 mt-10">
-                        <Link href="#">
-                        <Image src="/image/facebook.svg" alt="certification" width="40" height="40" className='hover:translate-y-4 hover:duration-300 hover:ease-in-out' />
-                        </Link>
-                        <Link href="#">
-                        <Image src="/image/Twitter.svg" alt="certification" width="40" height="40" className='hover:translate-y-4 hover:duration-300 hover:ease-in-out' />
-                        </Link>
-                        <Link href="#">
-                        <Image src="/image/LinkedIn.svg" alt="certification" width="40" height="40" className='hover:translate-y-4 hover:duration-300 hover:ease-in-out' />
-                        </Link>
-                        <Link href="#">
-                        <Image src="/image/Instagram.svg" alt="certification" width="40" height="40" className='hover:translate-y-4 hover:duration-300 hover:ease-in-out' />
-                        </Link>
+                        {socialMediaLinks.map(({ id, alt, href, photo }) =>(
+                          <Link href={href} key={id}>
+                          <Image src={photo} alt={alt} width="40" height="40" className='hover:translate-y-4 hover:duration-300 hover:ease-in-out' />
+                          </Link>
+
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -40,23 +35,12 @@ const Footer = () => {
                   <div className="col-span-5 md:col-span-2">
                     <p className="text-lg font-Roboto font-semibold mb-8 text-primaryBlack2">Reach us</p>
                     <div className="">
-                      <div className="flex items-center space-x-3">
-                        <Image src="/image/email-icon.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-xs md:text-sm">Support: <span className="font-normal">hello@landify.co</span></p>
-                      </div>
-                      <div className="flex items-center space-x-3 py-4">
-                        <Image src="/image/Mobile.svg" alt="certification" width="20" height="20"  />
-                        <p className="font-semibold text-primaryBlack text-xs md:text-sm">General: <span className="font-normal">+91 98765 43210</span></p>
-                      </div>
-                      <div className="flex items-center space-x-3">
-                        <Image src="/image/Location.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-xs md:text-sm md:max-w-[200px]">Lagos Office: <span className="font-normal">772 Ikeja, Ave
-                        Lagos, NIG 91789</span></p>
-                      </div>
-                      <div className="flex items-center space-x-3 py-4">
-                        <Image src="/image/Location.svg" alt="certification" width="25" height="25"  />
-                        <p className="font-semibold text-primaryBlack text-xs md:text-sm md:max-w-[200px]">Enugu Office: <span className="font-normal">772 Enugu Ave, NairaTriangle, NIG 91789</span></p>
-                      </div>
+                      { contacts.map(({ id, photo, alt, title, details }) => (
+                        <div className="flex items-center space-x-3 pb-4" key={id}>
+                          <Image src={photo} alt={alt} width='25' height="25" />
+                          <p className="font-semibold text-primaryBlack text-xs md:text-sm">{title} <span className='font-normal pb-4'>{details}</span></p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-span-5 md:col-span-3">

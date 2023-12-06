@@ -1,38 +1,8 @@
 import Link from 'next/link'
+import { footerLinks } from './data/index'
 
 const FooterLink = () => {
-  const footerLinks = [
-    {
-      id: 1,
-      title: 'MailBlink',
-      links: [
-        { id: 1, link: 'Get a demo', href: '#'},
-        { id: 2, link: 'Download', href: '#'},
-      ]
-    },
-    {
-      id: 2,
-      title: 'Products',
-      links: [
-        { id: 1, link: 'Newsletter', href: '#'},
-        { id: 2, link: 'Email Marketing', href: '#'},
-        { id: 3, link: 'Automation', href: '#'},
-        { id: 4, link: 'Automation', href: '#'},
-        { id: 5, link: 'Templates', href: '#'},
-      ]
-    },
-    {
-      id: 3,
-      title: 'Resources',
-      links: [
-        { id: 1, link: 'Blog', href: '#'},
-        { id: 2, link: 'Webiner', href: '#'},
-        { id: 3, link: 'Marketing Guides', href: '#'},
-        { id: 4, link: 'Prices', href: '#'},
-        { id: 5, link: 'Contact us', href: '#'},
-      ]
-    },
-  ]
+  
   return (
     <div className='grid grid-cols-3'>
         {footerLinks.map((item) =>(
