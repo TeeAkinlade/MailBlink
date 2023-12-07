@@ -1,7 +1,7 @@
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Image from 'next/image'
 
-const AboutSectionOne = () => {
+const AboutSectionTwo = () => {
   return (
     <section className="">
         <div className="grid grid-cols-1 md:grid-cols-2">
@@ -26,4 +26,4 @@ const AboutSectionOne = () => {
   )
 }
 
-export default AboutSectionOne;
+export default AboutSectionTwo;

@@ -1,3 +1,4 @@
+import { RiVerifiedBadgeFill } from "react-icons/ri";
 import Image from 'next/image'
 
 const AboutSectionOne = () => {
