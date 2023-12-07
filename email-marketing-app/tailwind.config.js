@@ -18,7 +18,9 @@ module.exports = {
         ui_primary: "#1F284F",
         ui_secondary1: "#0070F0",
         tertiary: "#FAFBFC",
-        Ash: "#575757"
+        Ash: "#575757",
+        ui_primary2:"#228B22",
+        ui_button:"#0070F0",
       },
       keyframes: {
         "animate-fade-in": {
