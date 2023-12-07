@@ -23,7 +23,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/Features/index.jsx",
+    "components/AboutFeatures/index.jsx",
     "components/Hero/index.jsx",
     "components/About/Contact/index.jsx"
   ],
