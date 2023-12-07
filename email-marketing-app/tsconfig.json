@@ -25,7 +25,7 @@
     "**/*.tsx",
     "components/Features/index.jsx",
     "components/Hero/index.jsx",
-    "components/Contact/index.jsx"
+    "components/About/Contact/index.jsx"
   ],
   "exclude": ["node_modules"]
 }
