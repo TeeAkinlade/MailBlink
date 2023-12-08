@@ -22,13 +22,13 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="">
-                  <Image src='/image/Rectangle.svg' alt="left-half-circle" width="24" height="24" className=" absolute left-0 top-0" />
-                  <Image src='/image/Rectangle (1).svg' alt="left-half-cirle 2" width="64" height="44" className="hidden md:block absolute left-0 bottom-0" />
-                  <Image src='/image/Rectangle (2).svg' alt="left-half-cirle 2" width="20" height="20" className="absolute right-0 bottom-4 md:bottom-10" />
+                  <Image src='/assets/images/Rectangle.svg' alt="left-half-circle" width="24" height="24" className=" absolute left-0 top-0" />
+                  <Image src='/assets/images/Rectangle (1).svg' alt="left-half-cirle 2" width="64" height="44" className="hidden md:block absolute left-0 bottom-0" />
+                  <Image src='/assets/images/Rectangle (2).svg' alt="left-half-cirle 2" width="20" height="20" className="absolute right-0 bottom-4 md:bottom-10" />
                 </div>
             </div>
             <div className="pr-4">
-              <Image src='/image/Group 1000000796.svg' alt="hero-dashboard-image" width='150' height='150' className="w-full object-cover" />
+              <Image src='/assets/images/Group 1000000796.svg' alt="hero-dashboard-image" width='150' height='150' className="w-full object-cover" />
             </div>
         </div>
     </section>

@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import { servicesData } from './data';
+import { servicesData } from '@/constants';
+import Link from 'next/link';
 
 const Services = () => {
   return (

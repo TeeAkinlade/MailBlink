@@ -1,10 +1,11 @@
-import About from "./home/About";
+import Hero from "@/components/Hero";
 import Campaign from "./home/Campaign";
-import Footer from "../components/Home-components/Footer";
-import Hero from "../components/Home-components/Hero";
-import Nav from "../components/Home-components/Nav";
-import Services from "./home/Services";
 import Subscribe from "./home/Subscribe";
+import Services from "./home/Services";
+import Footer from "./home/footer/Footer";
+import About from "./home/About";
+import Nav from "./home/nav/Nav";
+
 
 export default function Home() {
   return (

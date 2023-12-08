@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import FooterLink from "./FooterLink";
-import { contacts, socialMediaLinks } from "./data";
+import { contacts, socialMediaLinks } from "@/constants";
+import FooterLink from "./FooterLinks";
 
 const Footer = () => {
   return (
@@ -23,7 +23,7 @@ const Footer = () => {
               <div className="">
                 <div className="">
                   <Image
-                    src="/image/certification.svg"
+                    src="/assets/images/certification.svg"
                     alt="certification"
                     width="100"
                     height="100"
