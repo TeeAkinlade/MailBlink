@@ -14,13 +14,24 @@ module.exports = {
       xl: "1440px",
     },
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        Roboto: ["Roboto Slab"],
+      },
       colors: {
+        backGround: "#E5E5E5",
+        navyBlue: "#001F3F",
+        forestGreen: "#228B22",
+        lightBlue: "#2EC5CE",
+        primaryBlack: "#575757",
+        primaryBlack2: "#202020",
         ui_primary: "#1F284F",
         ui_secondary1: "#0070F0",
         tertiary: "#FAFBFC",
         Ash: "#575757",
         ui_primary2:"#228B22",
         ui_button:"#0070F0",
+        linear: "#F5F0FF",
       },
       keyframes: {
         "animate-fade-in": {

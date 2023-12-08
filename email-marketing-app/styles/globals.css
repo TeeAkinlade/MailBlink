@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +19,8 @@ label {
 }
 
 input[type="text"],
-select, textarea {
+select,
+textarea {
   @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3 mt-2;
 }
 
@@ -34,5 +37,20 @@ input:checked + label {
 }
 
 button {
-  @apply transition-all hover:scale-95 cursor-pointer
+  @apply transition-all hover:scale-95 cursor-pointer;
+}
+
+nav .signUp {
+  border-radius: 24px;
+  padding: 8px 24px;
+  background: linear-gradient(to right, #001f3f 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.9s ease-in-out;
+}
+
+nav .signUp:hover {
+  background-position: left bottom;
+  color: white;
+  border: none;
 }
