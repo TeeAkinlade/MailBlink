@@ -54,3 +54,7 @@ nav .signUp:hover {
   color: white;
   border: none;
 }
+
+.list-alphabet {
+  list-style-type: lower-alpha;
+}
