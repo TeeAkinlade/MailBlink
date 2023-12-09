@@ -4,7 +4,7 @@ const Terms = () => {
   return (
     <div className='bg-[#fff]'>
       <div className='lg:ps-[12rem] lg:w-[85%] pt-[5rem]'>
-        <h1 className='text-[#111827] text-[30px] leading-[36px] font-[800] font-poppins lg:ms-[-3rem]'>Privacy Policy</h1>
+        <h1 className='text-[#111827] text-[30px] leading-[36px] font-[800] font-poppins lg:ms-[-3rem]'>Terms of Use</h1>
         <h1 className='text-[17px] leading-[14.95px] font-[700] items-justify mt-5 underline'>Acceptance of the Terms of Use</h1>
         <p className='text-[14px] font-[400] mt-5 font-poppins items-justify'>These terms of use are entered into by and between you (“you“ or “your”) and beehiiv Inc. ( “we,” “us” or “our”). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, “Terms of Use”), govern your access to and use of our products, functionality and services, including without limitation, those provided through https://www.beehiiv.com/ (collectively, “beehiiv”), whether as a guest or a registered user.</p>
         <p className='text-[14px] font-[400] mt-5 font-poppins items-justify'>Please read the Terms of Use carefully before you start to use beehiiv. By using beehiiv, you accept and agree to be bound and abide by these Terms of Use, our Publisher Agreement (if applicable) and our Privacy Policy, found at beehiiv.com/privacy incorporated herein by reference. If you do not want to agree to the foregoing, you must not access or use beehiiv</p>
