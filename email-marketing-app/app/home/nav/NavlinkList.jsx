@@ -19,7 +19,6 @@ const NavlinkList = () => {
 
   const show = () => {
     setVisible(prev => !prev)
-    console.log("clicked")
   }
 
   return (
