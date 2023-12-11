@@ -1,5 +1,5 @@
+import { footerLinks } from "@/constants";
 import Link from "next/link";
-import { footerLinks } from "./data/index";
 
 const FooterLink = () => {
   return (
