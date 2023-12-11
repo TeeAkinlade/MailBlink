@@ -1,5 +1,4 @@
 import BookDemo from "@/components/BookDemo";
-import Community from "@/components/Community";
 import { EmailHero } from "@/components/EmailHero";
 import Testimonial from "@/components/Testimonial";
 

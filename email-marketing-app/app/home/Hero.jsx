@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="">
         <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="px-8 md:px-0 md:pl-24 relative">
+            <div className="px-8 md:px-0 md:px-24 relative">
               <div className="pt-10 md:pt-12 pb-6 md:pb-48">
                   <p className="text-primaryBlack2 text-3xl sm:text-4xl md:text-5xl font-semibold font-Roboto leading-tight">SMS Marketing and <span className="text-forestGreen">Email Marketing</span> Made Easy.</p>
                   <div className="my-6 md:my-8">
@@ -17,7 +17,7 @@ const Hero = () => {
                     </ul>
                   </div>
                   <div className="flex mt-8 md:mt-4 pb-10">
-                    <input type="text" placeholder="Enter email" className="px-3 md:px-5 py-2 focus:border-0 outline-none shadow-xl cursor-pointer" />
+                    <input type="email" placeholder="Enter email" className="heroInput px-3 md:px-5 py-2 focus:border-0 outline-none shadow-xl cursor-pointer" />
                     <button className="bg-navyBlue text-white text-sm md:text-lg px-3 md:px-5 py-2 ml-5 border border-navyBlue hover:text-navyBlue hover:font-semibold hover:border hover:border-navyBlue hover:bg-white transition duration-150">Let’s Talk</button>
                   </div>
                 </div>

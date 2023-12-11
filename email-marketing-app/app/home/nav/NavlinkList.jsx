@@ -19,7 +19,6 @@ const NavlinkList = () => {
 
   const show = () => {
     setVisible(prev => !prev)
-    console.log("clicked")
   }
 
   return (
@@ -35,7 +34,6 @@ const NavlinkList = () => {
                   <FaAngleDown className={`${icon === link.id ? "rotate-180 text-lightBlue" : "text-primaryBlack2 rotate-0"} ${visible ? "text-lightBlue" : "text-primaryBlack2 rotate-0"} duration-300 mx-1`} />
                 </span>
               </h1>
-              {visible && (
                 <div>
                 { sublinks === link.id ? 
                   <div>
@@ -68,7 +66,6 @@ const NavlinkList = () => {
                   <></>
                 }
                 </div>
-              )}
             </div>
           </div>
       ))}

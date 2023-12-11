@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero";
+import Hero from "@/app/home/Hero";
 import Campaign from "./home/Campaign";
 import Subscribe from "./home/Subscribe";
 import Services from "./home/Services";
