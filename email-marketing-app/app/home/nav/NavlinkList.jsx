@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link  from "next/link";
 import { FaAngleDown } from "react-icons/fa6";
 import { NavListData } from "@/constants";

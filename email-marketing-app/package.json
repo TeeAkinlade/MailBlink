@@ -11,16 +11,22 @@
   "dependencies": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf966fae8a0d6d0854720977910aeb8aeba1e852
     "framer-motion": "^10.16.12",
     "next": "^14.0.3",
-=======
     "@nextui-org/modal": "^2.0.28",
     "next": "14.0.3",
+<<<<<<< HEAD
 >>>>>>> c0a18701bf687d13cd0fb04b357cb64f89ff008f
 =======
     "framer-motion": "^10.16.12",
     "next": "^14.0.3",
 >>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
+=======
+>>>>>>> bf966fae8a0d6d0854720977910aeb8aeba1e852
     "react": "^18",
     "react-dom": "^18",
     "react-email-editor": "^1.7.9",

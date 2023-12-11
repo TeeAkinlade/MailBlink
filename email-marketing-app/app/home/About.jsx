@@ -15,6 +15,8 @@ const About = () => {
                 <h3 className="text-navyBlue font-semibold leading-[28px] mb-4 text-lg">Who are we? MailBlink is a team of talented individuals working together to make software people love.</h3>
                 <p className="text-primaryBlack leading-[28px] mb-8">We develop multi-award winning enterprise-class software that helps IT teams audit IT environments.</p>
                 <Link href='/about-us' className='bg-navyBlue text-white px-4 py-2 rounded-full border border-navyBlue hover:text-navyBlue hover:bg-white hover:border hover:border-navyBlue hover:text-medium transition duration-150 ease-in-out'>Read More</Link>
+               <div className="mt-4">
+               </div>
             </div>
         </div>
       </div>
