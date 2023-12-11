@@ -11,6 +11,8 @@ import { VscReport } from 'react-icons/vsc';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { IoIosArrowBack } from 'react-icons/io';
 import { MdSearch } from 'react-icons/md';
+import { VscAccount } from 'react-icons/vsc';
+import Image from 'next/image';
 
 export default function Sidebar() {
 	// State Management for smaller screens
@@ -22,34 +24,40 @@ export default function Sidebar() {
 	const MenuLinks = [
 		{
 			title: 'Dashboard',
-			src: <MdDashboardCustomize className='md:h-4 md:w-4' />,
+			src: <MdDashboardCustomize />,
 		},
 		{
 			title: 'Inbox',
-			src: <HiInboxArrowDown className='md:h-4 md:w-4' />,
+			src: <HiInboxArrowDown />,
 		},
 		{
 			title: 'Schedule',
-			src: <AiOutlineSchedule className='md:h-4 md:w-4' />,
+			src: <AiOutlineSchedule />,
 			gap: false,
 		},
 		{
-			title: 'Compaigns',
+			title: 'Analytics',
 			src: <TbBrandCampaignmonitor />,
 		},
 		{
 			title: 'Contacts',
-			src: <RiContactsLine className='md:h-4 md:w-4' />,
+			src: <RiContactsLine />,
 		},
 
-		{
-			title: 'Reports',
-			src: <VscReport />,
-		},
+		// {
+		// 	title: 'Reports',
+		// 	src: <VscReport />,
+		// },
 		{
 			title: 'Settings',
 
 			src: <IoSettingsOutline />,
+			gap: true,
+		},
+		{
+			title: 'Accounts',
+
+			src: <VscAccount />,
 			gap: false,
 		},
 		{
@@ -78,7 +86,7 @@ export default function Sidebar() {
 			{!miniSidebar ? (
 				<aside
 					className={` ${
-						toggle ? 'w-72' : 'w-20'
+						toggle ? 'w-96' : 'w-20'
 					}  ease-in-out duration-500 h-screen bg-ui_primary fixed left-0 top-0 md:relative p-5 pt-8 z-50`}
 				>
 					<TiChevronLeft
@@ -95,7 +103,7 @@ export default function Sidebar() {
 						<h1
 							className={`font-poppins origin-left text-[2rem] font-[700] leading-8 text-white ${
 								!toggle && 'scale-[0.3]'
-							} cursor-pointer hover:animate-pulse duration-500`}
+							} cursor-pointer hover:animate-pulse duration-500 mb-2`}
 						>
 							MailBlink
 						</h1>
@@ -106,7 +114,7 @@ export default function Sidebar() {
 							<li
 								key={index}
 								className={`text-accent_3 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-slate-50 group bg-transparent rounded-md duration-500 ${
-									menu.gap ? 'mt-9' : 'mt-5'
+									menu.gap ? 'mt-9' : 'mt-3'
 								}  `}
 								onClick={() => {
 									setActiveLink(index);
@@ -131,7 +139,7 @@ export default function Sidebar() {
 							</li>
 						))}
 						<div
-							className='text-accent_3 text-sm flex items-center gap-x-4 cursor-pointer p-2  hover:bg-white  hover:text-ui_secondary1 bg-transparent mt-14 rounded-md duration-500'
+							className='text-accent_3 text-sm flex items-center gap-x-4 cursor-pointer p-2  hover:bg-white  hover:text-ui_secondary1 bg-transparent mt-8 rounded-md duration-500'
 							onClick={() => setToggle(!toggle)}
 						>
 							<div className=' '>
@@ -142,6 +150,28 @@ export default function Sidebar() {
 							>
 								{' '}
 								Collapse Menu{' '}
+							</span>
+						</div>
+						<div
+							className='text-accent_3 text-sm flex items-center gap-x-4 cursor-pointer p-2  bg-transparent mt-8 duration-500'
+							onClick={() => setToggle(!toggle)}
+						>
+							<Image
+								src='/assets/images/pexels-vlad-bagacian-1368382.jpg'
+								width={40}
+								height={30}
+								alt='Profile Icon'
+								className='text-ui_primary italic h-[50px] rounded-full  cursor-pointer'
+							/>
+
+							<span className={`flex flex-col gap-0 ${!toggle && 'scale-0'}`}>
+								<h3 className='text-md font-[600] text-[#fefefe]'>
+									Donald <strong>Davidson</strong>
+									{''}(@donaldDavid33)
+								</h3>
+								<p className='text-[0.75rem] text-accent_3 mt-1'>
+									Your personal account
+								</p>
 							</span>
 						</div>
 					</ul>
@@ -155,7 +185,7 @@ export default function Sidebar() {
 					<IoIosArrowBack
 						onClick={() => setMiniToggle(!miniToggle)}
 						alt='Controller icon for collapsable sidebar'
-						className={`absolute bg-slate-200 font-[600] cursor-pointer text-ui_secondary1  rounded-md h-10 -right-14 p-2 top-16 shadow-[-5px 0px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)] w-10 ${
+						className={`absolute bg-slate-200 font-[600] cursor-pointer text-ui_secondary1  rounded-md h-10 -right-14 p-2 top-28 shadow-[-5px 0px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)] w-10 ${
 							!miniToggle && 'rotate-180'
 						} ease-in-out duration-500`}
 					/>

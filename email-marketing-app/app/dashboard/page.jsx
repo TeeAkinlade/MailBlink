@@ -11,7 +11,7 @@ export default function page() {
 				{/* <Sidebar /> */}
 				<Sidebar />
 				{/* Main Dashboard display area */}
-				<div className='flex flex-col  gap-4 md:gap-0 w-full h-full overflow-y-auto oveflow-x-hidden'>
+				<div className='flex flex-col overflow-x-hidden  gap-4 md:gap-0 w-full h-full overflow-y-auto '>
 					{/* Navbar COMPONENT goes here */}
 
 					<Navbar />

@@ -28,3 +28,15 @@ select {
 .btn {
 	@apply flex justify-center items-center text-white w-full py-3 px-4 font-semibold text-base rounded-full transition-all hover:scale-95;
 }
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #33333382;
+	border-radius: 40px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #fefefe;
+}
