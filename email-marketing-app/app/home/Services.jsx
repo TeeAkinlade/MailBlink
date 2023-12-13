@@ -5,7 +5,7 @@ const Services = () => {
   return (
     <section className='bg-linear'>
         <div className="mx-auto max-w-7xl">
-            <div className="py-20 px-8 md:px-0">
+            <div className="py-20 px-8">
                 <p className="text-3xl md:text-5xl font-semibold text-navyBlue font-Roboto text-center">Our Services</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 mt-12 gap-10">
                     {servicesData.map(({ id, icon, title, contents, href, linkText }) => (

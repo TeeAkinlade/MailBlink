@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="mt-16 mb-8">
-        <div className="pt-16 pb-8 px-8 md:px-0">
+        <div className="pt-16 pb-8 px-8">
           <div className="grid grid-cols-5 gap-20">
             <div className="col-span-5 md:col-span-2">
               <Link
@@ -79,12 +79,18 @@ const Footer = () => {
             >
               MailBlink 2023. All rights reserved
             </Link>
-            <Link
-              href="#"
-              className="text-primaryBlack hover:text-navyBlue text-xs md:text-sm"
-            >
-              Terms & Privacy
-            </Link>
+            <div className="">
+              <Link
+                href="/terms-of-use"
+                className="text-primaryBlack hover:text-navyBlue text-xs md:text-sm"
+              >Terms & </Link>
+              <Link
+                href="/privacy-policy"
+                className="text-primaryBlack hover:text-navyBlue text-xs md:text-sm"
+                >
+                  Privacy
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -156,7 +156,7 @@ export const servicesData = [
     title: "SMS",
     contents:
       "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae optio natus officiis nesciunt eum repellendus commodi aliquam aperiam odit, iure illo ab esse molestias recusandae beatae ipsam, laudantium cum at.",
-    href: "#",
+    href: "/sms",
     linkText: "Learn more",
   },
   {

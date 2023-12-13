@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import SignBtn from "@/components/Sign-Btn";
-import NavlinkList from "./NavlinkList";
+import NavlinkList from "./navlinkList";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="px-8 md:px-0 py-6">
-      <div className="mx-auto max-w-7xl">
+    <nav className="mx-auto max-w-7xl">
+      <div className="px-8 py-6">
         <div className="flex justify-between items-center">
           <Link
             href="/"
@@ -21,12 +21,12 @@ const Nav = () => {
             MailBlink
           </Link>
           <div
-            className="text-3xl md:hidden"
+            className="text-3xl lg:hidden"
             onClick={() => setOpen((prev) => !prev)}
           >
             <RxHamburgerMenu />
           </div>
-          <div className="md:flex hidden items-center space-x-6">
+          <div className="lg:flex hidden items-center space-x-6">
             <NavlinkList />
             <SignBtn />
           </div>
@@ -35,7 +35,7 @@ const Nav = () => {
         {open && (
           <div
             className={`
-                md:hidden bg-tertiary text-left fixed w-2/3 top-0 bottom-0 py-24 px-4 overflow-y-auto
+                lg:hidden bg-tertiary text-left fixed w-2/3 top-0 bottom-0 py-24 px-4 overflow-y-auto
                  z-50 right-0 opacity-100 transition duration-500`}
           >
             <LiaTimesSolid

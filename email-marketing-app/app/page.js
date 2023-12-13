@@ -10,7 +10,7 @@ import Nav from "./home/nav/Nav";
 export default function Home() {
   return (
     <main>
-      <Nav />
+      <Nav/>
       <Hero />
       <About />
       <Campaign />
