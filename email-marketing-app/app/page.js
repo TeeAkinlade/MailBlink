@@ -20,7 +20,7 @@ import Subscribe from "./home/Subscribe";
 export default function Home() {
   return (
     <main>
-      <Nav />
+      <Nav/>
       <Hero />
       <About />
       <Campaign />

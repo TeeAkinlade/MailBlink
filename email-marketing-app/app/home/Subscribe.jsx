@@ -7,7 +7,7 @@ const Subscribe = () => {
   return (
     <div className='bg-navyBlue'>
         <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center px-8 md:px-0 py-16 gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center px-8 py-16 md:gap-10 lg:gap-20">
                 <div className="text-white">
                     <p className="uppercase text-sm">Why Choose Us</p>
                     <h3 className="font-Roboto text-3xl md:text-5xl font-semibold py-8 leading-tight ">Partiality on or continue in the particular principles</h3>
