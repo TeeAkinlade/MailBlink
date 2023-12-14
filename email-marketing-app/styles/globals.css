@@ -1,17 +1,12 @@
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
-=======
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
 .bg-secondary {
   @apply bg-gradient-to-br from-[#F5F0FF] via-[#EFF6FE] to-[#EDFAF5];
-=======
+
 ::-webkit-scrollbar {
 	width: 6px;
 }
@@ -29,13 +24,11 @@
 }
 .bg-secondary {
 	@apply bg-gradient-to-br from-[#F5F0FF] via-[#EFF6FE] to-[#EDFAF5];
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 }
 
 /* Form styles since all of them are the same */
 
 form {
-<<<<<<< HEAD
   @apply text-slate-500 flex flex-col gap-5;
 }
 
@@ -78,7 +71,6 @@ nav .signUp:hover {
   background-position: left bottom;
   color: white;
   border: none;
-=======
 	@apply text-slate-500 flex flex-col gap-5;
 }
 
@@ -94,6 +86,18 @@ textarea {
 
 form button {
 	@apply btn bg-ui_secondary1 hover:bg-ui_primary;
+}
+
+/* dashboard/settings */
+
+#input{
+  @apply w-full px-2 py-3 md:w-[100%] mt-2  border border-gray-400  rounded-md ;
+}
+#button{
+  @apply w-[100%] md:w-[50%];
+}
+#inputa,#inputb{
+  @apply w-full md:w-[100%] ;
 }
 
 .btn {
@@ -121,7 +125,6 @@ nav .signUp:hover {
 	background-position: left bottom;
 	color: white;
 	border: none;
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 }
 
 .list-alphabet {
