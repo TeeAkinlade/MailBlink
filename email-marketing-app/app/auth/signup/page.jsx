@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const SignUp = () => {
+const Signup = () => {
   // State to manage form inputs and their validation statuses
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -177,4 +177,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;

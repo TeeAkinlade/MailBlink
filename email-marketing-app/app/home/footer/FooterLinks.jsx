@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { footerLinks } from "@/constants";
 import Link from "next/link";
+=======
+import Link from "next/link";
+import { footerLinks } from "./data/index";
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 
 const FooterLink = () => {
   return (
