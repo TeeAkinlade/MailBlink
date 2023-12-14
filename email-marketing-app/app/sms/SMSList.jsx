@@ -1,6 +1,11 @@
 import Image from "next/image";
+<<<<<<< HEAD
+import search from "@/public/assets/icons/search.icon.svg";
+import deleteIcon from "@/public/assets/icons/delete.icon.svg";
+=======
 import search from "@/public/icons/search.icon.svg";
 import deleteIcon from "@/public/icons/delete.icon.svg";
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 
 export const SMSList = ({ smsCampaigns }) => {
   return (

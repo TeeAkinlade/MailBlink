@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
+<<<<<<< HEAD
+import close from "@/public/assets/icons/close.icon.svg";
+=======
 import close from "@/public/icons/close.icon.svg";
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 import Image from "next/image";
 import Link from "next/link";
 

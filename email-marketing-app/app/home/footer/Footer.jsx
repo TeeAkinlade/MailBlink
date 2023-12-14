@@ -1,7 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+<<<<<<< HEAD
+import { contacts, socialMediaLinks } from "@/constants";
+import FooterLink from "./FooterLinks";
+=======
 import FooterLink from "./FooterLink";
 import { contacts, socialMediaLinks } from "./data";
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 
 const Footer = () => {
   return (
@@ -23,7 +28,11 @@ const Footer = () => {
               <div className="">
                 <div className="">
                   <Image
+<<<<<<< HEAD
+                    src="/assets/images/certification.svg"
+=======
                     src="/image/certification.svg"
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
                     alt="certification"
                     width="100"
                     height="100"

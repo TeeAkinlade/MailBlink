@@ -1,12 +1,22 @@
+<<<<<<< HEAD
+import { campaignDetailsList, campaignFeaturesDetails } from '@/constants'
+import Image from 'next/image'
+import Link from 'next/link'
+=======
 import Image from 'next/image'
 import { campaignDetailsList, campaignFeaturesDetails } from './data'
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 
 const Campaign = () => {
   return (
     <section className='mx-auto max-w-7xl'>
         <div className="my-20 px-8 md:px-0">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center md:gap-20">
+<<<<<<< HEAD
+                <Image src="/assets/images/unsplash_Of_m3hMsoAA.svg" alt="campaign splash photo" width={100} height={100}  className='w-full object-cover'/>
+=======
                 <Image src="/image/unsplash_Of_m3hMsoAA.svg" alt="campaign splash photo" width={100} height={100}  className='w-full object-cover'/>
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
                 <div className="">
                     <p className="font-Roboto text-3xl sm:text-4xl md:text-5xl mt-10 md:mt-0 font-bold text-primaryBlack2 text-center leading-tight">Create beautiful <br/>
                     <span className='text-forestGreen'>Email Campaigns </span></p>
@@ -25,7 +35,11 @@ const Campaign = () => {
                             ))}
                         </div>
                         <div className="flex justify-center mt-8">
+<<<<<<< HEAD
+                            <Link href='/campaigns' className="bg-navyBlue hover:rounded-[24px] rounded-full border border-navyBlue text-white hover:bg-white hover:text-navyBlue px-6 py-3 font-semibold hover:border hover:border-navyBlue hover:font-medium text-sm transition duration-100">Schedule a demo</Link>
+=======
                             <button href='#' className="bg-navyBlue hover:rounded-[24px] rounded-full border border-navyBlue text-white hover:bg-white hover:text-navyBlue px-6 py-3 font-semibold hover:border hover:border-navyBlue hover:font-medium text-sm transition duration-100">Schedule a demo</button>
+>>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
                         </div>
                     </div>
                 </div>
