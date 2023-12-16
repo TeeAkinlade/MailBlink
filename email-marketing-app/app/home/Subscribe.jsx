@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-import React from 'react'
-
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
 const Subscribe = () => {
   return (
     <div className='bg-navyBlue'>

@@ -1,11 +1,8 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.bg-secondary {
-  @apply bg-gradient-to-br from-[#F5F0FF] via-[#EFF6FE] to-[#EDFAF5];
 
 ::-webkit-scrollbar {
 	width: 6px;
@@ -22,6 +19,7 @@
 * {
 	scroll-behavior: smooth;
 }
+
 .bg-secondary {
 	@apply bg-gradient-to-br from-[#F5F0FF] via-[#EFF6FE] to-[#EDFAF5];
 }
