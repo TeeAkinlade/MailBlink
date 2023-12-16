@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-// import { contacts, socialMediaLinks } from "../../constants";
 import FooterLink from "./FooterLinks";
 import { contacts, socialMediaLinks } from "../../../constants";
 

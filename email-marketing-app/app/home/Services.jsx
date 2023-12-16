@@ -1,4 +1,3 @@
-// import { servicesData } from '@/constants';
 import Link from 'next/link';
 import { servicesData } from '../../constants';
 

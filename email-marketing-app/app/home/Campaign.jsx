@@ -1,4 +1,3 @@
-// import { campaignDetailsList, campaignFeaturesDetails } from '@/constants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { campaignDetailsList, campaignFeaturesDetails } from '../../constants'

@@ -1,4 +1,3 @@
-// import { footerLinks } from "@/constants";
 import Link from "next/link";
 import { footerLinks } from "../../../constants";
 
