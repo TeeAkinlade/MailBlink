@@ -11,7 +11,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="mx-auto max-w-7xl">
+    <nav className="mx-auto max-w-7xl max-container padding-container">
       <div className="px-8 py-6">
         <div className="flex justify-between items-center">
           <Link
