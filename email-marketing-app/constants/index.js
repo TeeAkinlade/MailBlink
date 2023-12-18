@@ -1,30 +1,15 @@
-<<<<<<< HEAD
-import image1 from "@/public/assets/images/Frame 57.svg";
-import image2 from "@/public/assets/images/Feature Icon with circle.svg";
-import image3 from "@/public/assets/images/Feature Icon with circle (1).svg";
-import image4 from "@/public/assets/images/Feature Icon with circle (2).svg";
-import image5 from "@/public/assets/images/Feature Icon with circle (4).svg";
-import image6 from "@/public/assets/images/facebook.svg";
-import image7 from "@/public/assets/images/Twitter.svg";
-import image8 from "@/public/assets/images/LinkedIn.svg";
-import image9 from "@/public/assets/images/Instagram.svg";
-import image10 from "@/public/assets/images/email-icon.svg";
-import image11 from "@/public/assets/images/Mobile.svg";
-import image12 from "@/public/assets/images/Location.svg";
-=======
-import image1 from "@/public/image/Frame 57.svg";
-import image2 from "@/public/image/Feature Icon with circle.svg";
-import image3 from "@/public/image/Feature Icon with circle (1).svg";
-import image4 from "@/public/image/Feature Icon with circle (2).svg";
-import image5 from "@/public/image/Feature Icon with circle (4).svg";
-import image6 from "@/public/image/facebook.svg";
-import image7 from "@/public/image/Twitter.svg";
-import image8 from "@/public/image/LinkedIn.svg";
-import image9 from "@/public/image/Instagram.svg";
-import image10 from "@/public/image/email-icon.svg";
-import image11 from "@/public/image/Mobile.svg";
-import image12 from "@/public/image/Location.svg";
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
+import image1 from "../public/assets/images/Frame 57.svg";
+import image2 from "../public/assets/images/Feature Icon with circle.svg";
+import image3 from "../public/assets/images/Feature Icon with circle (1).svg";
+import image4 from "../public/assets/images/Feature Icon with circle (2).svg";
+import image5 from "../public/assets/images/Feature Icon with circle (4).svg";
+import image6 from "../public/assets/images/facebook.svg";
+import image7 from "../public/assets/images/Twitter.svg";
+import image8 from "../public/assets/images/LinkedIn.svg";
+import image9 from "../public/assets/images/Instagram.svg";
+import image10 from "../public/assets/images/email-icon.svg";
+import image11 from "../public/assets/images/Mobile.svg";
+import image12 from "../public/assets/images/Location.svg";
 import { IoMdMail } from "react-icons/io";
 import { FaSms, FaWpforms } from "react-icons/fa";
 
@@ -138,7 +123,7 @@ export const campaignFeaturesDetails = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis et sed nam sem tellus erat.",
   },
   {
-    id: 2,
+    id: 3,
     photo: image4,
     alt: "Feature Icon with circle",
     heading: "Endpoint Security",
@@ -175,7 +160,7 @@ export const servicesData = [
     linkText: "Learn more",
   },
   {
-    id: 1,
+    id: 3,
     icon: <FaWpforms size={50} />,
     title: "Form",
     contents:

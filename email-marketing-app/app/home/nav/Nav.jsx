@@ -1,22 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
-import SignBtn from "@/components/Sign-Btn";
 import NavlinkList from "./navlinkList";
-import { useState } from "react";
-import { LiaTimesSolid } from "react-icons/lia";
-import { RxHamburgerMenu } from "react-icons/rx";
-import SignBtn from "@/components/Sign-Btn";
-import NavlinkList from "./NavlinkList";
+import SignBtn from "../../../components/SignBtn";
 
-import NavlinkList from "./NavlinkList";
-import { useState } from "react";
-import { LiaTimesSolid } from "react-icons/lia";
-import { RxHamburgerMenu } from "react-icons/rx";
-import SignBtn from "./Sign-Btn";
 const Nav = () => {
   const [open, setOpen] = useState(false);
 

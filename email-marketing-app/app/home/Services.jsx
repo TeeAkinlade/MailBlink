@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import { servicesData } from '@/constants';
 import Link from 'next/link';
-=======
-import Link from 'next/link'
-import { servicesData } from './data';
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
+import { servicesData } from '../../constants';
 
 const Services = () => {
   return (
