@@ -1,6 +1,4 @@
 import Image from "next/image";
-import search from "@/public/assets/icons/search.icon.svg";
-import deleteIcon from "@/public/assets/icons/delete.icon.svg";
 
 export const CampaingList = ({ campaigns }) => {
   return (
@@ -15,7 +13,12 @@ export const CampaingList = ({ campaigns }) => {
               placeholder="Search Campaign"
             />
             <button className="flex flex-shrink justify-center items-center rounded-r-full border-[1px] border-slate-200 bg-slate-200 p-[2.40rem] py-3 text-white transition-all hover:border-slate-100 hover:bg-slate-100">
-              <Image src={search} alt="search"></Image>
+              <Image
+                src="/assets/icons/search.icon.svg"
+                width={35}
+                height={35}
+                alt="search"
+              />
             </button>
           </div>
         </form>
@@ -53,7 +56,12 @@ export const CampaingList = ({ campaigns }) => {
                 Edit
               </button>
               <button className="bg-slate-200 p-2 transition-colors hover:bg-slate-100">
-                <Image src={deleteIcon} alt="delete campaign"></Image>
+                <Image
+                  src="/assets/icons/delete.icon.svg"
+                  alt="delete campaign"
+                  width={35}
+                  height={35}
+                />
               </button>
             </div>
           </li>

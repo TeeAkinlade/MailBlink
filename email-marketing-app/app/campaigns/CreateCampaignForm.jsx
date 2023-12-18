@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import close from "@/public/assets/icons/close.icon.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -412,7 +411,12 @@ export const CreateCampaignForm = () => {
                   setIsCreateCampaignOpen(false);
                 }}
               >
-                <Image src={close} alt="close" />
+                <Image
+                  src="/assets/icons/close.icon.svg"
+                  width={35}
+                  height={35}
+                  alt="close"
+                />
               </button>
             </div>
 
