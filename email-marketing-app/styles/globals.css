@@ -17,7 +17,7 @@
 }
 
 .padding-x {
-  @apply sm:px-16 px-6;
+  @apply sm:px-16 px-[2.25rem];
 }
 
 .padding-y {
@@ -25,7 +25,15 @@
 }
 
 .flex-center {
-  @apply flex items-center justify-center;
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
 }
 
 .flex-between {

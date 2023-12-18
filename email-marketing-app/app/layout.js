@@ -5,15 +5,10 @@ export const metadata = {
   description: "Email and SMS Marketing Services",
 };
 
-const Rootlayout = ({ children }) => {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="relative">
-        <main className="">
-          <Nav />
-          {children}
-        </main>
-      </body>
+      <body className="font-poppins min-h-screen bg-secondary">{children}</body>
     </html>
   );
-};
+}

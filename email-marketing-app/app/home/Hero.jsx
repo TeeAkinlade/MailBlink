@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="max-container padding-container">
+    <section className="max-width padding-x">
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="px-8 lg:pl-16 relative">
           <div className="pt-10 md:pt-12 pb-6 lg:pb-48">
