@@ -1,12 +1,4 @@
 import Image from "next/image";
-<<<<<<< HEAD
-import search from "@/public/assets/icons/search.icon.svg";
-import deleteIcon from "@/public/assets/icons/delete.icon.svg";
-=======
-import search from "@/public/icons/search.icon.svg";
-import deleteIcon from "@/public/icons/delete.icon.svg";
->>>>>>> 03691fac21fe7c9d1cbc741974d76de17d85be51
-
 export const SMSList = ({ smsCampaigns }) => {
   return (
     <ul className="flex flex-col gap-6">
@@ -20,7 +12,12 @@ export const SMSList = ({ smsCampaigns }) => {
               placeholder="Search Campaign"
             />
             <button className="flex flex-shrink justify-center items-center rounded-r-full border-[1px] border-slate-200 bg-slate-200 p-[2.40rem] py-3 text-white transition-all hover:border-slate-100 hover:bg-slate-100">
-              <Image src={search} alt="search"></Image>
+              <Image
+                src="/assets/icons/search.icon.svg"
+                width={40}
+                height={40}
+                alt="search"
+              />
             </button>
           </div>
         </form>
@@ -56,7 +53,12 @@ export const SMSList = ({ smsCampaigns }) => {
                 Edit
               </button>
               <button className="bg-slate-200 p-2 transition-colors hover:bg-slate-100">
-                <Image src={deleteIcon} alt="delete campaign"></Image>
+                <Image
+                  src="/assets/icons/delete.icon.svg"
+                  alt="delete campaign"
+                  width={40}
+                  height={40}
+                />
               </button>
             </div>
           </li>
