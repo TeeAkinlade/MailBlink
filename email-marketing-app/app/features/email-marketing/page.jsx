@@ -1,7 +1,7 @@
-import BookDemo from "./BookDemo";
+import BookDemo from "@/components/BookDemo";
 import EmailHero from "./EmailHero";
-import Testimonial from "./Testimonial";
-import Community from "./Community";
+import Testimonial from "@/components/Testimonial";
+import Community from "@/components/Community";
 
 const Email_Marketing = () => {
   return (

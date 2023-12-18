@@ -1,4 +1,4 @@
-import TestimonialCard from "../../../components/TestimonialCard";
+import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
 
 const Testimonial = (props) => {
