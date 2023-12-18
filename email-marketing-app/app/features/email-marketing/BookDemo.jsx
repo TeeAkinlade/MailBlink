@@ -1,4 +1,4 @@
-import Form from "./Form";
+import Form from "../../../components/Form";
 
 const BookDemo = () => {
   return (
@@ -8,7 +8,9 @@ const BookDemo = () => {
           <span className=" md:text-[2rem] text-[1.5rem] font-semibold text-[#0070F0E5]">
             Save upto 50% of your IT cost.
           </span>
-          <h2 className=" md:text-[2.5rem] text-[2rem] font-bold mt-3 mb-3">Book Your 15 minute Call</h2>
+          <h2 className=" md:text-[2.5rem] text-[2rem] font-bold mt-3 mb-3">
+            Book Your 15 minute Call
+          </h2>
           <p className=" text-Ash md:text-xl text-lg md:w-[80%] w-full">
             Our FirstWave support engineers are highly skilled and experienced
             in NMIS, Open-AudIT.

@@ -1,14 +1,15 @@
-import BookDemo from "@/components/BookDemo";
-import { EmailHero } from "@/components/EmailHero";
-import Testimonial from "@/components/Testimonial";
+import BookDemo from "./BookDemo";
+import EmailHero from "./EmailHero";
+import Testimonial from "./Testimonial";
+import Community from "./Community";
 
 const Email_Marketing = () => {
   return (
     <div>
-      <EmailHero/>
-      <BookDemo/>
-      <Testimonial/>
-      <Community/>
+      <EmailHero />
+      <BookDemo />
+      <Testimonial />
+      <Community />
     </div>
   );
 };
