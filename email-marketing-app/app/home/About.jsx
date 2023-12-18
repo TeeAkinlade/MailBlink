@@ -19,7 +19,7 @@ const About = () => {
             />
           </div>
           <div className="mt-10 md:mt-0">
-            <h2 className="font-Roboto font-semibold md:text-4xl lg:text-5xl text-navyBlue mb-10 hidden md:block">
+            <h2 className="font-semibold md:text-4xl lg:text-5xl text-navyBlue mb-10 hidden md:block">
               About Us
             </h2>
             <h3 className="text-navyBlue font-semibold leading-[28px] mb-4 text-lg">
@@ -30,10 +30,7 @@ const About = () => {
               We develop multi-award winning enterprise-class software that
               helps IT teams audit IT environments.
             </p>
-            <Link
-              href="/about-us"
-              className="bg-navyBlue text-white px-4 py-2 rounded-full border border-navyBlue hover:text-navyBlue hover:bg-white hover:border hover:border-navyBlue hover:text-medium transition duration-150 ease-in-out"
-            >
+            <Link href="/about-us" className="custom-btn">
               Read More
             </Link>
             <div className="mt-4"></div>

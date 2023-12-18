@@ -42,9 +42,7 @@ const Hero = () => {
                 placeholder="Enter email"
                 className="px-3 md:px-5 py-2 focus:border-0 outline-none shadow-xl  cursor-pointer"
               />
-              <button className="bg-navyBlue text-white text-sm md:text-lg px-3 md:px-5 py-2 ml-5 border border-navyBlue hover:text-navyBlue hover:font-semibold hover:border hover:border-navyBlue hover:bg-white transition duration-150">
-                Let’s Talk
-              </button>
+              <button className="custom-btn">Let’s Talk</button>
             </div>
           </div>
           <div className="">
