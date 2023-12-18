@@ -5,7 +5,7 @@ import { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import NavlinkList from "./navlinkList";
-import SignBtn from "../../../components/SignBtn";
+import SignBtn from "@/components/SignBtn";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
