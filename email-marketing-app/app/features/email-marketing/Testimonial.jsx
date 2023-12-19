@@ -1,9 +1,9 @@
 import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
 
-const Testimonial = (props) => {
+const Testimonial = () => {
   return (
-    <section className="md:h-[56rem] lg:p-10 md:p-5 p-10 bg-white flex flex-col justify-center">
+    <section className="mt-5 max-width padding-y padding-x md:h-[50rem] h-fit bg-white flex flex-col justify-center">
       <div className=" md:ml-[10%] md:mb-0 mb-8">
         <Image
           src="/assets/icons/quote_mark.svg"
@@ -12,30 +12,30 @@ const Testimonial = (props) => {
           className="md:w-[100px] w-[60px] "
         />
         <div className="md:-mt-14 md:ml-16 -mt-10 ml-12">
-          <h2 className="text-ui_primary font-bold md:text-[2.5rem] text-[2rem]">
-            Real Stories from <br /> Real Customers
+          <h2 className="text-ui_primary font-bold lg:text-[2.5rem] md:text-[2.1rem] text-[1.8rem] sm:w-[35%]">
+            Real Stories from Real Customers
           </h2>
           <p className=" text-Ash md:text-lg">Get inspired by these stories.</p>
         </div>
       </div>
-      <div className=" flex md:flex-nowrap flex-wrap items-center justify-center gap-5">
+      <div className=" flex md:flex-nowrap flex-wrap items-center justify-center gap-7">
         <div className="md:w-[22rem]">
           <TestimonialCard
             feedback={
               "To quickly start my startup landing page design, I was looking for a landing page UI Kit. Landify is one of the best landing page UI kit I have come across. It’s so flexible, well organised and easily editable."
             }
-            image={"/assets/image/display_pic.jpeg"}
+            image={"/assets/images/display_pic.jpeg"}
             name={"Floyd Miles"}
             position={"Co-Founder, BookMyShow"}
           />
         </div>
         <div>
-          <div className="md:w-[25.8rem] mb-5">
+          <div className="md:w-[25.8rem] mb-7">
             <TestimonialCard
               feedback={
                 "I used landify and created a landing page for my startup within a week. The Landify UI Kit is simple and highly intuitive, so anyone can use it."
               }
-              image={"/assets/image/display_pic.jpeg"}
+              image={"/assets/images/display_pic.jpeg"}
               name={"Floyd Miles"}
               position={"Co-Founder, BookMyShow"}
             />
@@ -43,7 +43,7 @@ const Testimonial = (props) => {
           <div className="md:w-[22rem]">
             <TestimonialCard
               feedback={"Landify saved our time in designing my company page."}
-              image={"/assets/image/display_pic.jpeg"}
+              image={"/assets/images/display_pic.jpeg"}
               name={"Floyd Miles"}
               position={"Co-Founder, BookMyShow"}
             />
