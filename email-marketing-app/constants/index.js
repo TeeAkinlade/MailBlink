@@ -260,3 +260,60 @@ export const contacts = [
     details: "772 Enugu Ave, NairaTriangle, NIG 91789",
   },
 ];
+
+// Hero section of email marketing page
+export const stats = [
+    {
+      id: 1,
+      title: "3 billion+",
+      details: "Calling numbers connected",
+    },
+    {
+      id: 2,
+      title: "100 billion+",
+      details: "Text messages sent",
+    },
+    {
+      id: 3,
+      title: "121 million+",
+      details: "phone numbers given out",
+    }
+  ];
+  
+  // Product section of email page
+  export const products = [
+    {
+      id: 1,
+      position: "relative",
+      variations: [
+        { bg: "#ffe6e6", top: "0", image: "/assets/icons/github.icon.svg", title: "3 billion+", details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atquecupiditate delectus est distinctio veritatis." },
+        { bg: "#e6f0ff", top: "2.5rem", image: "/assets/icons/github.icon.svg", title: "3 billion+", details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atquecupiditate est distinctio veritatis." },
+        { bg: "#e1f6f4", top: "5rem", image: "/assets/icons/github.icon.svg", title: "3 billion+", details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus est distinctio veritatis." },
+      ],
+    },
+    {
+      id: 2,
+      variations: [
+        { bg: "#ffe6ff", top: "0", image: "/assets/icons/github.icon.svg", title: "3 billion+ ", details: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. delectus est distinctio veritatis." },
+        { bg: "#e6ffee", top: "2.5rem", image: "/assets/icons/github.icon.svg", title: "3 billion+", details: "Calling numbers connected" },
+        { bg: "#f0f0f5", top: "5rem", image: "/assets/icons/github.icon.svg", title: "3 billion+", details: "Calling numbers connected" },
+      ],
+    },
+  ];
+  
+  // Community section of Hero page
+  export const items = [
+    {
+      id: 1,
+      image: "/assets/icons/support.svg",
+      title: "Community Support",
+      description:
+        "Community Support is also available for all open source users.",
+    },
+    {
+      id: 2,
+      image: "/assets/icons/github.icon.svg",
+      title: "MailBlink on GitHub",
+      description: "Track the MailBlink development changes on GitHub.",
+    },
+  ];
