@@ -19,23 +19,23 @@ const items = [
 
 const Community = () => {
   return (
-    <section className="flex md:flex-row flex-col lg:gap-28 md:gap-14 justify-center items-center md:h-[49.875rem] lg:px-[7.37rem] md:px-10 px-6 py-20 rounded-[100px]">
-      <div className="md:w-[30.31rem] w-full md:h-[34.5rem] md:mb-0 mb-16 ">
-        <Image
+    <section className="flex md:flex-row flex-col lg:gap-5 md:gap-5 justify-center items-center md:h-[49.875rem] lg:px-[7.37rem] md:px-10 px-6 md:py-5 rounded-[100px]">
+      <div className="md:w-[40% ] w-full ">
+       <Image
           src="/assets/images/community.jpeg"
           alt=""
-          width={1000}
-          height={1000}
+          width={500}
+          height={500}
           quality={100}
-          className="w-full h-full object-cover rounded-[100px]"
+          className="rounded-3xl"
         />
       </div>
 
-      <div className="md:w-[34.6rem]">
+      <div className="md:w-[100%]">
         <h2 className=" text-ui_primary font-bold lg:text-5xl text-4xl">
           Download NMIS
         </h2>
-        <p className=" leading-8 text-Ash mt-2">
+        <p className=" leading-8 text-Ash mt-2 text-md md:text-lg ">
           NMIS (Network Management Information System) is an open-source network
           management system that was first released in 1998.
           <Link href="/">
@@ -48,12 +48,12 @@ const Community = () => {
           {items.map((item) => (
             <div className="w-[50%]">
               <img src={item.image} alt="" />
-              <h3 className="font-semibold md:text-2xl text-xl mt-3">
+              <h3 className="font-semibold md:text-2xl text-xl mt-2">
                 {item.title}
               </h3>
-              <p className="text-Ash my-5">{item.description}</p>
+              <p className="text-Ash my-5 text-lg">{item.description}</p>
               <Link href="/">
-                <button className="border-2 border-ui_secondary1 bg-transparent rounded-full px-6 py-2 hover:bg-ui_secondary1 hover:text-white ">
+                <button className=" bg-navyBlue text-white px-8 py-3 border border-navyBlue hover:text-navyBlue hover:bg-white hover:border-navyBlue rounded-full transition duration-150 ease-in-out cursor-pointer ">
                   Join
                 </button>
               </Link>
