@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { FaAngleDown } from "react-icons/fa6";
 import { NavListData } from "@/constants";
@@ -10,6 +10,7 @@ const NavlinkList = () => {
   const [icon, setIcon] = useState(null);
   const [sublinks, setsublinks] = useState(true);
   const [visible, setVisible] = useState(false);
+  const closeMenu = useRef()
 
   const toggle = (id) => {
     setSelectedItem(id);
@@ -21,13 +22,29 @@ const NavlinkList = () => {
     setVisible((prev) => !prev);
   };
 
+  //Close menu by clicking outside
+  useEffect(() => {
+    let handler = (event) => {
+      if(!closeMenu.current.contains(event.target)){
+        setVisible(false);
+      }
+    }
+    document.body.addEventListener('mousedown', handler)
+
+    return () => {
+      document.body.removeEventListener('mousedown', handler)
+    }
+
+  })
+
   return (
-    <main className="flex flex-col md:flex-row item-start md:items-center">
+    <main className="flex flex-col md:flex-row item-start md:items-center" ref={closeMenu}>
       {NavListData.map((link) => (
         <div key={link.id} onClick={() => toggle(link.id)}>
           <div className="px-3 md:flex text-center md:cursor-pointer group">
             <h1
               onClick={show}
+              onMouseOver={show}
               className={`${
                 selectedItem === link.id
                   ? "text-lightBlue"
@@ -42,7 +59,7 @@ const NavlinkList = () => {
                   className={`${
                     icon === link.id
                       ? "rotate-180 text-lightBlue"
-                      : "text-primaryBlack2 rotate-0"
+                      : "text-primaryBlack2 rotate-180"
                   } ${
                     visible ? "text-lightBlue" : "text-primaryBlack2 rotate-0"
                   } duration-300 mx-1`}
