@@ -8,19 +8,22 @@ import { NavListData } from "@/constants";
 const NavlinkList = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [icon, setIcon] = useState(null);
-  const [sublinks, setsublinks] = useState(true);
+  const [sublinks, setsublinks] = useState(false);
   const [visible, setVisible] = useState(false);
   const closeMenu = useRef()
 
+  //function to set the id of drowdown menu modal base on the id clicked or hover on
   const toggle = (id) => {
     setSelectedItem(id);
     setIcon(id);
     setsublinks(id);
   };
 
+  //show the dropdown menu modal
   const show = () => {
     setVisible((prev) => !prev);
   };
+
 
   //Close menu by clicking outside
   useEffect(() => {
@@ -44,7 +47,11 @@ const NavlinkList = () => {
           <div className="px-3 md:flex text-center md:cursor-pointer group">
             <h1
               onClick={show}
-              onMouseOver={show}
+              onMouseOver={() => {
+                toggle(link.id);
+                show();
+              }
+              }
               className={`${
                 selectedItem === link.id
                   ? "text-lightBlue"
@@ -53,7 +60,7 @@ const NavlinkList = () => {
                 visible ? "text-lightBlue" : "text-primaryBlack2"
               } px-3 py-5 md:py-2 flex justify-between items-center font-semibold text-sm md:pr-0 pr-5 group cursor-pointer hover:bg-gray-200 rounded`}
             >
-              {link.name}
+                {link.name}
               <span>
                 <FaAngleDown
                   className={`${
@@ -71,7 +78,7 @@ const NavlinkList = () => {
                 <div>
                   {link.submenu && (
                     <div>
-                      <div className="md:ml-[-20px] md:absolute md:top-16 z-50 ">
+                      <div className="md:ml-[-20px] md:absolute md:top-12 z-50 ">
                         <div className="hidden md:block py-3">
                           <div className="w-4 h-4 left-3 absolute mt-1 bg-white rotate-45"></div>
                         </div>
