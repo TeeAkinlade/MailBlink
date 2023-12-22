@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { CreateSMSForm } from "./CreateSMSForm";
 import { SMSList } from "./SMSList";
+import { useCampaigns } from "@/hooks/useCampaigns";
 
 const SmsDetails = () => {
-  const [smsCampaigns, setSmsCampaigns] = useState([]);
+  const { campaigns, getCampaigns, error, isLoading } = useCampaigns();
+
   const [draftSms, setDraftSms] = useState([]);
   const [sentSms, setSentSms] = useState([]);
 
@@ -13,40 +15,17 @@ const SmsDetails = () => {
   const [showingDraft, setShowingDraft] = useState(true);
 
   useEffect(() => {
-    //TODO: This will be used to fetch the campaigns later
-    setSmsCampaigns([
-      {
-        id: 0,
-        name: "campaign1",
-        from_number: "+15017122661",
-        status: "sent",
-      },
-      {
-        id: 1,
-        name: "campaign2",
-        from_number: "+15017122661",
-        status: "draft",
-      },
-      {
-        id: 2,
-        name: "campaign2",
-        from_number: "+15017122661",
-        status: "sent",
-      },
-    ]);
+    getCampaigns("sms");
   }, []);
 
   useEffect(() => {
-    //Separate sent/drafted campaigns, //TODO: in the future it will be fetched from supabase
     // Filtering campaigns based on their status
-    const sent = smsCampaigns.filter((campaign) => campaign.status === "sent");
-    const drafts = smsCampaigns.filter(
-      (campaign) => campaign.status === "draft"
-    );
+    const sent = campaigns.filter((campaign) => campaign.status === "sent");
+    const drafts = campaigns.filter((campaign) => campaign.status === "draft");
 
     setSentSms(sent);
     setDraftSms(drafts);
-  }, [smsCampaigns]);
+  }, [campaigns]);
 
   return (
     <>
@@ -72,7 +51,7 @@ const SmsDetails = () => {
           <li
             className={`flex flex-shrink pb-3 border-b-2 transition-all hover:cursor-pointer  ${
               showingSent
-                ? "border-ui_secondary1"
+                ? "border-navyBlue"
                 : "border-transparent hover:scale-95"
             }`}
             onClick={() => {
@@ -92,7 +71,7 @@ const SmsDetails = () => {
           <li
             className={`flex flex-shrink pb-3 border-b-2 transition-all hover:cursor-pointer  ${
               !showingSent
-                ? "border-ui_secondary1"
+                ? "border-navyBlue"
                 : "border-transparent hover:scale-95"
             }`}
             onClick={() => {
@@ -112,9 +91,9 @@ const SmsDetails = () => {
 
       <section className="mx-10 mt-5 mb-10 bg-white rounded-md p-6">
         {showingSent ? (
-          <SMSList smsCampaigns={sentSms} />
+          <SMSList smsCampaigns={sentSms} getCampaigns={getCampaigns} />
         ) : (
-          <SMSList smsCampaigns={draftSms} />
+          <SMSList smsCampaigns={draftSms} getCampaigns={getCampaigns} />
         )}
       </section>
     </>
