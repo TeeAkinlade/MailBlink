@@ -11,11 +11,11 @@ const Sms_Marketing = () => {
     <div className="bg-white m-0">
       <SmsHero />
       <Section2 />
-      <BookDemo />
       <Support />
       <Testimonial />
       <NMIS />
       <Community />
+      <BookDemo />
     </div>
   );
 };
