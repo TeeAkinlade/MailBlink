@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { footerLinks } from "../../../constants";
+import { footerLinks } from "@/constants";
 
 const FooterLink = () => {
   return (
@@ -13,7 +13,7 @@ const FooterLink = () => {
             <div className="py-2" key={id}>
               <Link
                 href={href}
-                className="text-primaryBlack font-medium text-xs md:text-sm hover:text-navyBlue"
+                className="text-primaryBlack font-medium text-xs md:text-sm hover:text-ui_secondary1"
               >
                 {link}
               </Link>
