@@ -2,9 +2,9 @@ import { SmsHero } from "./SmsHero";
 import Section2 from "./Section2";
 import Support from "./Support";
 import NMIS from "./NMIS";
-import BookDemo from "./BookDemo";
-import Testimonial from "./Testimonial";
-import Community from "./Community";
+import BookDemo from "@/components/BookDemo";
+import Testimonial from "../email-marketing/Testimonial";
+import Community from "@/components/Community";
 
 const Sms_Marketing = () => {
   return (
