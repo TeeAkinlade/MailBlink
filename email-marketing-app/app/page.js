@@ -5,14 +5,12 @@ import Services from "./home/Services";
 import Footer from "./home/footer/Footer";
 import Nav from "./home/nav/Nav";
 import Hero from "./home/Hero";
-import About from "./about/about";
 
 export default function Home() {
   return (
     <main>
-      <Nav/>
+      <Nav />
       <Hero />
-      <About/>
       <Campaign />
       <Subscribe />
       <Services />
