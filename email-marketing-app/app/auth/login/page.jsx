@@ -3,17 +3,26 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router"; // Import useRouter from Next.js
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { useRouter } from "next/navigation";
+import Spinner from "../../../components/Spinner";
+import OauthComponent from '../OauthComponent'
 
 const Login = () => {
+  // Access routing functionality
+  const router = useRouter();
+  // Initialize Supabase client
+  const supabase = createClientComponentClient();
+
   // State to manage form inputs and their validation statuses
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   // Function to handle input changes
-  const handleUserNameChange = (event) => {
-    setUserName(event.target.value);
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
@@ -25,8 +34,8 @@ const Login = () => {
     const errors = {};
 
     // Validate username
-    if (!userName.trim()) {
-      errors.userName = "Username is required";
+    if (!email.trim()) {
+      errors.email = "email is required";
     }
 
     // Validate password
@@ -42,40 +51,45 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Validate form and check if it's valid
     const isValid = validateForm();
 
-    if (isValid) {
-      try {
-        // Simulated API call using fetch
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ userName, password }),
-          }
-        );
+    if (!isValid) {
+      return; // Don't proceed if validation fails
+    }
 
-        if (response.ok) {
-          console.log("Form submitted successfully!");
-          // Redirect to another page upon successful form submission
-          router.push("/success"); // Replace '/success' with the path you want to redirect to
-        } else {
-          console.error("Form submission failed");
-          // Handle other scenarios like response status not OK
-        }
-      } catch (error) {
-        console.error("An error occurred:", error);
-        // Handle fetch error
+    // Set loading state and start login process with supabase
+    setLoading(true);
+    try {
+      const {
+        data: { user },
+        error,
+      } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      // Update loading state and handle response
+      setLoading(false);
+
+      if (error) {
+        alert(error.message);
+      } else if (user.length !== 0) {
+        router.push("/auth/dashboard");
       }
+    } catch (error) {
+      // Handle unexpected errors
+      alert("catch error: " + error.message);
     }
   };
 
   return (
     <div>
-      <div className="lg:flex">
+        {/* loading animation */}
+        {loading && <Spinner/>}
+
+        {/*  */}
+        <div className="lg:flex">
         <div
           className="lg:w-[720px] h-[100vh] lg:ps-[247px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
           style={{
@@ -101,20 +115,18 @@ const Login = () => {
           </h3>
           <form className="mt-[16px]" onSubmit={handleSubmit}>
             <label className="text-[#515458] text-[12px] font-[500] font-Poppins mt-[22px]">
-              user name
+              Email
             </label>
             <br />
             <input
               type="text"
-              placeholder="enter user name"
+              placeholder="enter email"
               className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins mt-[4px] outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
               style={{ padding: "12px 0px 12px 12px", height: "48px" }}
-              value={userName}
-              onChange={handleUserNameChange}
+              value={email}
+              onChange={handleEmailChange}
             />
-            {errors.userName && (
-              <p className="text-red-500">{errors.userName}</p>
-            )}{" "}
+            {errors.email && <p className="text-red-500">{errors.email}</p>}{" "}
             {/* Display error message */}
             <br />
             <br />
@@ -137,7 +149,7 @@ const Login = () => {
             <br />
             <p className="mt-[5px]">
               <Link
-                href="#"
+                 href="/auth/reset"
                 className="text-[#1F284F] text-[14px] font-[600] leading-[18px] font-Poppins"
               >
                 Forgot password?
@@ -156,6 +168,7 @@ const Login = () => {
             >
               Sign up
             </button>
+            <OauthComponent/>
             <br />
             <p className="text-[#575757] text-center text-[14px] font-Poppins font-[400] leading-[18px] lg:ms-[-12rem] md:ms-[-8rem]">
               Don't have an account?{" "}
