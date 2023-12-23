@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { campaignDetailsList, campaignFeaturesDetails } from "../../constants";
+import { campaignDetailsList, campaignFeaturesDetails } from "@/constants";
 
 const Campaign = () => {
   return (
-    <section className="mx-auto max-w-7xl">
+    <section className="max-width padding-x">
       <div className="my-20 px-8">
         <div className="hidden md:block lg:hidden">
-          <p className="font-Roboto text-3xl sm:text-4xl md:text-5xl mt-10 md:mt-0 font-bold text-primaryBlack2 text-center leading-tight">
+          <p className="font-Roboto text-3xl sm:text-4xl md:text-5xl mt-10 md:mt-0 font-bold text-primaryBlack2 leading-tight">
             Create beautiful
             <span className="text-forestGreen"> Email Campaigns </span>
           </p>
@@ -20,12 +20,12 @@ const Campaign = () => {
           <Image
             src="/assets/images/unsplash_Of_m3hMsoAA.svg"
             alt="campaign splash photo"
-            width={100}
-            height={100}
-            className="w-full object-cover"
+            width={80}
+            height={80}
+            className="w-[80%] object-cover"
           />
           <div className="">
-            <p className="font-Roboto text-3xl sm:text-4xl md:text-5xl mt-10 md:mt-0 font-bold text-primaryBlack2 text-center leading-tight md:hidden lg:block">
+            <p className="font-Roboto text-3xl sm:text-4xl md:text-5xl mt-10 md:mt-0 font-bold text-primaryBlack2 leading-tight md:hidden lg:block">
               Create beautiful <br />
               <span className="text-forestGreen">Email Campaigns </span>
             </p>
@@ -41,7 +41,7 @@ const Campaign = () => {
                 {campaignDetailsList.map(
                   ({ id, photo, alt, heading, content }) => (
                     <div className="flex gap-10 mb-4" key={id}>
-                      <Image src={photo} alt={alt} width={50} height={50} />
+                      <Image src={photo} alt={alt} width={40} height={40} />
                       <div className="">
                         <h3 className="text-primaryBlack2 font-semibold my-2 text-sm md:text-base">
                           {heading}
@@ -54,7 +54,7 @@ const Campaign = () => {
                   )
                 )}
               </div>
-              <div className="flex justify-center mt-8">
+              <div className="py-10">
                 <Link href="/campaigns" className="custom-btn">
                   Schedule a demo
                 </Link>
@@ -66,7 +66,7 @@ const Campaign = () => {
           {campaignFeaturesDetails.map(
             ({ id, photo, alt, heading, content }) => (
               <div className="flex gap-10" key={id}>
-                <Image src={photo} alt={alt} width={60} height={60} />
+                <Image src={photo} alt={alt} width={40} height={40} />
                 <div className="">
                   <h3 className="text-primaryBlack2 font-semibold my-2 text-sm md:text-base">
                     {heading}

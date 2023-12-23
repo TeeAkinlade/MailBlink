@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <section className="max-width padding-x">
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="px-8 lg:pl-16 relative">
-          <div className="pt-10 md:pt-12 pb-6 lg:pb-48">
+        <div className="px-8 pb-6 lg:pb-48 relative">
+          <div className="pt-10 md:pt-12">
             <p className="text-primaryBlack2 text-3xl sm:text-4xl md:text-5xl font-semibold font-Roboto leading-tight">
               SMS Marketing and{" "}
               <span className="text-forestGreen">Email Marketing</span> Made
@@ -36,11 +36,11 @@ const Hero = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex mt-8 md:mt-4 pb-10">
+            <div className="flex gap-10 mt-8 md:mt-4 pb-10">
               <input
                 type="email"
                 placeholder="Enter email"
-                className="px-3 md:px-5 py-2 focus:border-0 outline-none shadow-xl  cursor-pointer"
+                className="px-3 md:px-5 py-2 focus:border-0 outline-none shadow-xl w-2/3 cursor-pointer hover:border hover:border-navyBlue hover:rounded-md"
               />
               <button className="custom-btn">Let’s Talk</button>
             </div>
@@ -51,14 +51,14 @@ const Hero = () => {
               alt="left-half-circle"
               width="24"
               height="24"
-              className="absolute left-0 top-0"
+              className="absolute -left-16 top-0"
             />
             <Image
               src="/assets/images/Rectangle (1).svg"
               alt="left-half-cirle 2"
               width="64"
               height="44"
-              className="hidden lg:block absolute left-0 bottom-0"
+              className="hidden lg:block absolute -left-16 bottom-0"
             />
             <Image
               src="/assets/images/Rectangle (2).svg"

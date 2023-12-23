@@ -1,3 +1,4 @@
+import Footer from "./home/footer/Footer";
 import "/styles/globals.css";
 
 export const metadata = {
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-poppins min-h-screen bg-secondary">{children}</body>
+     <body className="font-poppins min-h-screen bg-secondary">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
