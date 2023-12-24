@@ -75,47 +75,48 @@ const Signup = () => {
   return (
     <div>
       <div className="lg:flex">
+       <div>
+            <h1 className="text-[#17181A] text-[35px] ps-[1rem] font-[700] leading-[64px] font-Poppins">
+              MailBlink
+            </h1>
         <div
-          className="lg:w-[720px] h-[100vh] lg:ps-[247px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
-          style={{
-            background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
-          }}
-        >
-          <h1 className="text-[#17181A] text-[48px] font-[700] leading-[64px] font-Poppins">
-            MailBlink
-          </h1>
-          <h3 className="text-[#17181A] text-[32px] font-[700] leading-[40px] font-Poppins mt-[15px] flex">
-            We are mailblink <br /> So are you.{" "}
-            <Image
-              src="/assets/images/Group 2942.svg"
-              width="40"
-              height="39"
-              className="mt-[-5rem]"
-            />
-          </h3>
-          <p className="text-[#17181A] text-[16px] font-[400] leading-[28px] font-Poppins mt-[24px]">
-            Join to improve your job search, yourself, and{" "}
-            <br className="md:hidden" /> more. Get started by creating{" "}
-            <br className="lg:hidden xs:hidden md:block" /> a free account!
-          </p>
-          <p className="text-[#17181A] text-[16px] font-[400] leading-[28px] font-Poppins mt-[5px]">
-            We’re creating a service that puts you front{" "}
-            <br className="md:hidden" /> and center in your career.
-          </p>
-        </div>
+            className="lg:w-[720px] lg:ps-[140px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
+            style={{
+              background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
+            }}
+          >
+            <h3 className="text-[#17181A] text-[32px] font-[700] leading-[40px] font-Poppins mt-[15px] flex">
+              We are mailblink <br /> So are you.{" "}
+              <Image
+                src="/assets/images/Group 2942.svg"
+                width="40"
+                height="39"
+                className="mt-[-5rem]"
+              />
+            </h3>
+            <p className="text-[#17181A] text-[16px] font-[400] leading-[28px] font-Poppins mt-[24px]">
+              Join to improve your job search, yourself, and{" "}
+              <br className="md:hidden" /> more. Get started by creating{" "}
+              <br className="lg:hidden xs:hidden md:block" /> a free account!
+            </p>
+            <p className="text-[#17181A] text-[16px] font-[400] leading-[28px] font-Poppins mt-[5px]">
+              We’re creating a service that puts you front{" "}
+              <br className="md:hidden" /> and center in your career.
+            </p>
+          </div>
+       </div>
         <div className="lg:w-[720px] h-[100vh] bg-[#fff] lg:ps-[109px] lg:pt-[160px] xs:pt-[100px] xs:ps-[10px] xs:px-[0.85rem] md:px-[0.85rem]">
           <h3 className="text-[#17181A] text-[24px] font-[600] leading-[32px] font-Poppins ms-[1rem]">
             Create a personal account
           </h3>
           <form className="mt-[16px]" onSubmit={handleSubmit}>
-            <label className="text-[#515458] text-[12px] font-[500] font-Poppins mt-[22px]">
+            <label className="text-[#515458] text-[12px] font-[500] font-Poppins">
               user name
             </label>
-            <br />
             <input
               type="text"
               placeholder="enter user name"
-              className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins mt-[4px] outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
+              className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] font-Poppins outline-none lg:w-[364px] xs:w-[100%] md:w-[600px] login-input-text"
               style={{ padding: "12px 0px 12px 12px", height: "48px" }}
               value={userName}
               onChange={handleUserNameChange}
@@ -124,16 +125,13 @@ const Signup = () => {
               <p className="text-red-500">{errors.userName}</p>
             )}{" "}
             {/* Display error message */}
-            <br />
-            <br />
             <label className="text-[#515458] text-[12px] font-[500] font-Poppins">
               password
             </label>{" "}
-            <br />
             <input
               type="password"
               placeholder="enter password"
-              className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins mt-[4px] outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
+              className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
               style={{ padding: "12px 0px 12px 12px", height: "48px" }}
               value={password}
               onChange={handlePasswordChange}
@@ -142,7 +140,6 @@ const Signup = () => {
               <p className="text-red-500">{errors.password}</p>
             )}{" "}
             {/* Display error message */}
-            <br />
             <button
               type="submit"
               style={{
@@ -151,21 +148,20 @@ const Signup = () => {
                 borderRadius: "30px",
                 padding: "12px 24px",
               }}
-              className="text-[16px] font-[600] leading-[24px] flex justify-center items-center font-Poppins text-[#fff] mt-[24px] lg:w-[364px] xs:w-[100%] md:w-[600px]"
+              className="text-[16px] font-[600] leading-[24px] flex justify-center items-center font-Poppins text-[#fff] lg:w-[364px] xs:w-[100%] md:w-[600px]"
             >
               Sign up
             </button>
-            <br />
             <div className="lg:ms-[-12rem] xs:ms-[-1rem] md:ms-[-4rem]">
               <p className="text-[#575757] text-center text-[14px] font-Poppins font-[400] leading-[18px] mt-[3px]">
-                Already have an account?{" "}
-                <Link href="/signin" className="text-[#1F284F] font-[600]">
+                Already have an account?
+                <Link href="/auth/login" className="text-[#1F284F] font-[600]">
                   Log in
-                </Link>{" "}
+                </Link>
               </p>
               <p className="text-[#515458] text-center text-[12px] font-Poppins font-[400] leading-[18px] mt-[7px]">
-                By signing up, you agree to MailBlink’s <br />{" "}
-                <Link href="#" className="font-[500] underline">
+                By signing up, you agree to MailBlink’s <br />
+                <Link href="/legal-concerns" className="font-[500] underline">
                   Terms and Conditions.
                 </Link>
               </p>

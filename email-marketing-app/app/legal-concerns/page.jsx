@@ -7,11 +7,11 @@ const Legal = () => {
   return (
     <div>
       <div className='pt-[7rem] pb-[7rem] bg-[#fff] xs:px-[0.75rem] lg:px-[0rem]'>
-        <div className='lg:flex gap-[7rem] items-center'>
+        <div className='lg:flex gap-[5rem] items-center'>
           <div className='lg:ms-[150px]'>
-            <h1 className='text-[#1F284F] font-poppins text-[50px] font-[700] leading-[60px]'>legal terms</h1>
-            <h3 className='mt-[24px] text-[#1F284F] font-poppins text-[20px] font-[500] leading-[32px]'>mailblink prides itself on providing users <br className='xs:hidden lg:block' /> access to all their data.</h3>
-            <p className='mt-[16px] text-[#575757] text-[20px] font-poppins font-[400] leading-[32px]'>This begins with our products giving you all <br className='xs:hidden lg:block' /> the data on your network, but it extends to <br className='xs:hidden lg:block' /> any of your personal information. We pride <br className='xs:hidden lg:block' /> ourself on ensuring this is safe.</p><br />
+            <h1 className='text-[#1F284F] font-poppins text-[50px] font-[700] leading-[60px]'>Legal terms</h1>
+            <h3 className='mt-[24px] text-[#1F284F] font-poppins text-[20px] font-[500] leading-[32px]'>mailblink prides itself on providing users access to all their data.</h3>
+            <p className='mt-[16px] text-[#575757] text-[20px] font-poppins font-[400] leading-[32px] lg:w-[550px]'>This begins with our products giving you all the data on your network, but it extends to any of your personal information. We pride ourself on ensuring this is safe.</p><br />
             <Link href='#'
               className='mt-[24px] w-[180px] text-[16px] text-[#FFF] font-[600] leading-[24px] font-poppins'
               style={{
@@ -29,9 +29,9 @@ const Legal = () => {
           </div>
         </div>
       </div>
-      <div className='mt-[5rem] mb-5 px-[0.75rem]'>
+      <div className='mt-[5rem] mb-5 xs:px-[0.75rem] lg:px-0'>
         <h1 className='text-[#1f2129] font-poppins lg:text-[32px] xs:text-[28px] font-[700] leading-[40px] text-center'>Need more information? Consult our Terms of <br className='xs:hidden lg:block'/> Service and other legal agreements.</h1>
-        <div className='flex flex-wrap gap-[3%] lg:ms-[5rem] mt-[4rem]'>
+        <div className='flex flex-wrap gap-[2%] lg:ms-[5rem] mt-[4rem]'>
           <div className='lg:w-[370px] xs:w-[100%] md:w-[350px] h-[280px] rounded-[22px] border-[1px] border-solid border-[#DFDFDF] bg-[#fff] py-[5px] lg:px-[25px] xs:px-[20px] sm:px-[15px]'>
             <h1 className='text-[#1B1C31] text-[27px] font-[800] leading-[33px] tracking-tighter-[-0.72px] mt-[30px]'>Privacy in Statement</h1>
             <p className='text-[#64607D] text-[16px] font-[500] leading-[30px] tracking-tighter-[-0.32px] mt-[46px]'>How MailBlink handles your personal <br /> information when you use our services</p>

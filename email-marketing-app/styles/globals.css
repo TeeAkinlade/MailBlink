@@ -128,3 +128,6 @@ nav .signUp:hover {
 .list-alphabet {
   list-style-type: lower-alpha;
 }
+.login-input-text {
+	width: 364px !important;
+}
