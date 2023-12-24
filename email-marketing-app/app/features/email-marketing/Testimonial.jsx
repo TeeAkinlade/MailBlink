@@ -1,62 +1,79 @@
+"use client";
+
 import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
+import { testimonials } from "@/constants";
+import { Swiper, SwiperSlide } from "swiper/react"
+
+import "swiper/css"
+import "swiper/css/pagination"
+
+import { Pagination } from "swiper/modules"
 
 const Testimonial = () => {
+
   return (
-    <section className="mt-5 max-width padding-y padding-x md:h-[50rem] h-fit bg-white flex flex-col justify-center">
-      <div className=" md:ml-[10%] md:mb-0 mb-8">
+    <section className="mt-20 max-width padding-y padding-x md:h-[50rem] h-fit bg-white flex flex-col justify-center">
+      <div className=" md:ml-[10%] md:mb-0 mb-8 md:block flex-center flex-col">
         <Image
           src="/assets/icons/quote_mark.svg"
           width={100}
           height={100}
-          className="md:w-[100px] w-[60px] "
+          className="md:w-[100px] w-[60px] md:-ml-0 -ml-[15rem]"
         />
-        <div className="md:-mt-14 md:ml-16 -mt-10 ml-12">
-          <h2 className="text-ui_primary font-bold lg:text-[2.5rem] md:text-[2.1rem] text-[1.8rem] sm:w-[35%]">
-            Real Stories from Real Customers
+        <div className="md:-mt-14 md:ml-16 -mt-10">
+          <h2 className="text-ui_primary font-bold lg:text-[2.5rem] md:text-[2.1rem] text-[1.8rem]">
+            Real Stories from <br /> Real Customers
           </h2>
           <p className=" text-Ash md:text-lg">Get inspired by these stories.</p>
         </div>
       </div>
-      <div className=" flex md:flex-nowrap flex-wrap items-center justify-center gap-7">
-        <div className="md:w-[22rem]">
-          <TestimonialCard
-            feedback={
-              "To quickly start my startup landing page design, I was looking for a landing page UI Kit. Landify is one of the best landing page UI kit I have come across. It’s so flexible, well organised and easily editable."
-            }
-            image={"/assets/images/display_pic.jpeg"}
-            name={"Floyd Miles"}
-            position={"Co-Founder, BookMyShow"}
-          />
-        </div>
-        <div>
-          <div className="md:w-[25.8rem] mb-7">
-            <TestimonialCard
-              feedback={
-                "I used landify and created a landing page for my startup within a week. The Landify UI Kit is simple and highly intuitive, so anyone can use it."
-              }
-              image={"/assets/images/display_pic.jpeg"}
-              name={"Floyd Miles"}
-              position={"Co-Founder, BookMyShow"}
-            />
-          </div>
-          <div className="md:w-[22rem]">
-            <TestimonialCard
-              feedback={"Landify saved our time in designing my company page."}
-              image={"/assets/images/display_pic.jpeg"}
-              name={"Floyd Miles"}
-              position={"Co-Founder, BookMyShow"}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="mt-16 gap-1 flex justify-center items-center">
-        <span className="w-2 h-1 bg-[#00000033] rounded-md"></span>
-        <span className="w-2 h-1 bg-[#00000033] rounded-md"></span>
-        <span className="w-3 h-1 bg-Ash rounded-md"></span>
-        <span className="w-2 h-1 bg-[#00000033] rounded-md"></span>
-        <span className="w-2 h-1 bg-[#00000033] rounded-md"></span>
-      </div>
+
+        <Swiper
+        slidesPreView={'1'}
+        centeredSlides={true}
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination',
+        }}
+        modules={[ Pagination]}
+        className=" w-full "
+       >
+          {testimonials.map((testimonial, index) => (
+          <SwiperSlide  key={index}>
+            <div className='flex md:flex-nowrap flex-wrap items-center justify-center gap-7 pb-20 w-full'>
+            <div className="md:w-[22rem]">
+              <TestimonialCard
+                feedback={testimonial.variations[0].feedback}
+                image={testimonial.variations[0].image}
+                name={testimonial.variations[0].name}
+                position={testimonial.variations[0].position}
+              />
+            </div>
+            <div>
+              <div className="md:w-[25.8rem] mb-7">
+                <TestimonialCard
+                  feedback={testimonial.variations[1].feedback}
+                  image={testimonial.variations[1].image}
+                  name={testimonial.variations[1].name}
+                  position={testimonial.variations[1].position}
+                />
+              </div>
+              <div className="md:w-[22rem]">
+                <TestimonialCard
+                  feedback={testimonial.variations[2].feedback}
+                  image={testimonial.variations[2].image}
+                  name={testimonial.variations[2].name}
+                  position={testimonial.variations[2].position}
+                />
+              </div>
+            </div>
+            </div>
+          </SwiperSlide>
+        ))}
+
+        <div className="swiper-pagination"></div>
+        </Swiper>
     </section>
   );
 };
