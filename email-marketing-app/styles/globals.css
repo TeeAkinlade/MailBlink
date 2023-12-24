@@ -41,7 +41,7 @@
 }
 
 .custom-btn {
-  @apply bg-navyBlue text-white px-8 py-3 border border-navyBlue hover:text-navyBlue hover:bg-white hover:border-navyBlue rounded-full transition duration-150 ease-in-out cursor-pointer;
+  @apply bg-navyBlue text-white sm:px-8 py-3 px-5 sm:text-base text-[12px] border border-navyBlue hover:text-navyBlue hover:bg-white hover:border-navyBlue rounded-full transition duration-150 ease-in-out cursor-pointer;
 }
 /* END: General styles */
 
@@ -51,14 +51,14 @@ form {
   @apply text-slate-500 flex flex-col gap-5;
 }
 
-label {
-  @apply text-xs font-medium;
+form label {
+  @apply text-xs font-medium mb-2;
 }
 
-input[type="text"],
-select,
-textarea {
-  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3 mt-2;
+form input[type="text"],
+form select,
+form textarea {
+  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3;
 }
 
 form button {
@@ -75,21 +75,6 @@ input:checked + label {
 
 button {
   @apply transition-all hover:scale-95 cursor-pointer;
-}
-/* jdfjdfjjk */
-
-label {
-  @apply text-xs font-medium;
-}
-
-input[type="text"],
-select,
-textarea {
-  @apply border-[1px] border-slate-400 font-normal rounded-lg w-full px-2 py-3 mt-2;
-}
-
-form button {
-  @apply btn bg-ui_secondary1 hover:bg-ui_primary;
 }
 
 /* Start of dashboard/settings styles*/
@@ -120,6 +105,9 @@ button {
 .list-alphabet {
   list-style-type: lower-alpha;
 }
+.login-input-text {
+	width: 364px !important;
+}
 /* End of Dashboard styles */
 
 /* Custom CSS */
@@ -142,4 +130,25 @@ button {
 
 .box-shadow {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+  gap: 3;
+	position: relative;
+	padding: 1rem 0;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet {
+	width: 10px;
+	height: 4px;
+	background: #7f7e7e;
+	border-radius: 30px;
+	}
+  
+  .swiper-pagination .swiper-pagination-bullet-active {
+	background: #515355;
+	width: 13px;
 }

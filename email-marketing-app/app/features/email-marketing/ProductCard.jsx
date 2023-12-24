@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import { IoIosArrowRoundForward } from "react-icons/io";
-import Link from "next/link";
 
 export const ProductCard = (props) => {
 
@@ -28,19 +26,13 @@ export const ProductCard = (props) => {
       };
 
   return (
-    <div className={` relative flex flex-col gap-5 p-6 bg-white rounded-lg lg:w-[33%] md:w-[40%] w-[95%] box-shadow hover:scale-105 transition-all`} style={top}>
+    <div className={` relative flex flex-col gap-4 p-6 bg-white rounded-lg lg:w-[25%] md:[40%] w-full box-shadow hover:scale-105 transition-all`} style={top}>
       <div
         className={`rounded-full w-12 h-12 flex-center md:p-3 p-2`} style={{backgroundColor:`${props.bg}`}}>
         <img src={props.src} alt="" className=" w-6" />
       </div>
       <h3 className="text-lg font-bold text-ui_primary md:h-[2.8rem]">{props.title}</h3>
       <p className="text-base text-primaryBlack md:h-[8rem] ">{props.details}</p>
-      <Link href="/">
-      <div className="flex items-center cursor-pointer text-ui_secondary1 border-b-[1px] w-fit border-transparent hover:border-ui_secondary1 ">
-        <span className='mr-2'>Learn More</span>
-        <IoIosArrowRoundForward size={20} />
-      </div>
-      </Link>
     </div>
   );
 };
