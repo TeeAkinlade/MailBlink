@@ -1,80 +1,110 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
+import Spinner from '../../../components/Spinner';
+import currentUser from '../currentUser';
+import OauthComponent from '../OauthComponent';
+// import { useRouter } from "next/router"; // Import useRouter from Next.js
 
 const Signup = () => {
-  // State to manage form inputs and their validation statuses
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({});
+	// Access routing functionality
+	const router = useRouter();
+	// Initialize Supabase client
+	const supabase = createClientComponentClient();
 
-  // Function to handle input changes
-  const handleUserNameChange = (event) => {
-    setUserName(event.target.value);
-  };
+	// access current user from currentUser component
+	const { user } = currentUser();
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+	// State to manage form inputs and their validation statuses
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [errors, setErrors] = useState({});
+	const [loading, setLoading] = useState(false);
 
-  // Function to validate form inputs
-  const validateForm = () => {
-    const errors = {};
+	// Function to handle input changes
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
 
-    // Validate username
-    if (!userName.trim()) {
-      errors.userName = "Username is required";
-    }
+	const handlePasswordChange = (event) => {
+		setPassword(event.target.value);
+	};
 
-    // Validate password
-    if (!password.trim()) {
-      errors.password = "Password is required";
-    }
+	// Function to validate form inputs
+	const validateForm = () => {
+		const errors = {};
 
-    setErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
+		// Validate username
+		if (!email.trim()) {
+			errors.email = 'email is required';
+		}
 
-  // Function to handle form submission
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+		// Validate password
+		if (!password.trim()) {
+			errors.password = 'Password is required';
+		}
 
-    const isValid = validateForm();
+		setErrors(errors);
+		return Object.keys(errors).length === 0;
+	};
 
-    if (isValid) {
-      try {
-        // Simulated API call using fetch
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ userName, password }),
-          }
-        );
+	// Function to handle form submission
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		// Validate form and check if it's valid
+		const isValid = validateForm();
+		if (!isValid) {
+			return; // Don't proceed if validation fails
+		}
 
-        if (response.ok) {
-          console.log("Form submitted successfully!");
-          // Redirect to another page upon successful form submission
-          router.push("/success"); // Replace '/success' with the path you want to redirect to
-        } else {
-          console.error("Form submission failed");
-          // Handle other scenarios like response status not OK
-        }
-      } catch (error) {
-        console.error("An error occurred:", error);
-        // Handle fetch error
-      }
-    }
-  };
+		// Set loading state and start signup process
+		setLoading(true);
 
-  return (
-    <div>
-      <div className="lg:flex">
+		try {
+			// Attempt signup using Supabase
+			const {
+				data: { user },
+				error,
+			} = await supabase.auth.signUp({
+				email,
+				password,
+				options: {
+					emailRedirectTo: `${location.origin}/auth/callback`,
+				},
+			});
+
+			// Update loading state and handle response
+			setLoading(false);
+			if (error) {
+				alert('Supabase error: ' + error.message);
+			} else if (user.identities.length === 0) {
+				// User already exists with this email
+				alert('A user with this email already exists');
+			} else {
+				// Successful signup with no existing user
+				router.push("/"); // Redirect page to home page
+				console.log(user); // Log user data for debug
+				alert(
+					'A confirmation link has been sent to your email, Verify your account to continue'
+				);
+			}
+		} catch (error) {
+			// Handle unexpected errors
+			alert('catch error: ' + error.message);
+		}
+	};
+
+	return (
+		<div>
+			{/* spinner displays loading animation when loading is true */}
+			{loading && <Spinner />}
+
+			{/* Signup form */}
+			<div className="lg:flex">
         <div
           className="lg:w-[720px] h-[100vh] lg:ps-[247px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
           style={{
@@ -109,20 +139,18 @@ const Signup = () => {
           </h3>
           <form className="mt-[16px]" onSubmit={handleSubmit}>
             <label className="text-[#515458] text-[12px] font-[500] font-Poppins mt-[22px]">
-              user name
+              Email
             </label>
             <br />
             <input
               type="text"
-              placeholder="enter user name"
+              placeholder="enter email"
               className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins mt-[4px] outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
               style={{ padding: "12px 0px 12px 12px", height: "48px" }}
-              value={userName}
-              onChange={handleUserNameChange}
+              value={email}
+              onChange={handleEmailChange}
             />
-            {errors.userName && (
-              <p className="text-red-500">{errors.userName}</p>
-            )}{" "}
+            {errors.email && <p className="text-red-500">{errors.email}</p>}
             {/* Display error message */}
             <br />
             <br />
@@ -159,7 +187,7 @@ const Signup = () => {
             <div className="lg:ms-[-12rem] xs:ms-[-1rem] md:ms-[-4rem]">
               <p className="text-[#575757] text-center text-[14px] font-Poppins font-[400] leading-[18px] mt-[3px]">
                 Already have an account?{" "}
-                <Link href="/signin" className="text-[#1F284F] font-[600]">
+                <Link href="/login" className="text-[#1F284F] font-[600]">
                   Log in
                 </Link>{" "}
               </p>
@@ -173,8 +201,8 @@ const Signup = () => {
           </form>
         </div>
       </div>
-    </div>
-  );
+		</div>
+	);
 };
 
 export default Signup;
