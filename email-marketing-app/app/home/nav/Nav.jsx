@@ -5,13 +5,13 @@ import { useState } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { RxHamburgerMenu } from "react-icons/rx";
 import NavlinkList from "./navlinkList";
-import SignBtn from "../../../components/SignBtn";
+import SignBtn from "@/components/SignBtn";
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="mx-auto max-w-7xl">
+    <nav className="mx-auto max-width padding-x">
       <div className="px-8 py-6">
         <div className="flex justify-between items-center">
           <Link

@@ -1,14 +1,17 @@
-import BookDemo from "@/components/BookDemo";
-import { EmailHero } from "@/components/EmailHero";
-import Testimonial from "@/components/Testimonial";
+import NMIS from "../sms-marketing/NMIS";
+import { EmailAbout } from "./About";
+import { EmailHero } from "./EmailHero";
+import { Products } from "./Product";
+import Testimonial  from "./Testimonial";
 
 const Email_Marketing = () => {
   return (
     <div>
-      <EmailHero/>
-      <BookDemo/>
+      <EmailHero />
+      <EmailAbout/>
+      <Products/>
       <Testimonial/>
-      <Community/>
+      <NMIS/>
     </div>
   );
 };
