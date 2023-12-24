@@ -1,8 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
+import Spinner from '../../../components/Spinner';
+import currentUser from '../currentUser';
+import OauthComponent from '../OauthComponent';
+// import { useRouter } from "next/router"; // Import useRouter from Next.js
 
 const Signup = () => {
   // State to manage form inputs and their validation statuses
@@ -77,6 +83,102 @@ const Signup = () => {
       <div className="lg:flex">
        <div
           className="lg:w-[720px] h-[100vh]"
+	// Access routing functionality
+	const router = useRouter();
+	// Initialize Supabase client
+	const supabase = createClientComponentClient();
+
+	// access current user from currentUser component
+	const { user } = currentUser();
+
+	// State to manage form inputs and their validation statuses
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [errors, setErrors] = useState({});
+	const [loading, setLoading] = useState(false);
+
+	// Function to handle input changes
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
+
+	const handlePasswordChange = (event) => {
+		setPassword(event.target.value);
+	};
+
+	// Function to validate form inputs
+	const validateForm = () => {
+		const errors = {};
+
+		// Validate username
+		if (!email.trim()) {
+			errors.email = 'email is required';
+		}
+
+		// Validate password
+		if (!password.trim()) {
+			errors.password = 'Password is required';
+		}
+
+		setErrors(errors);
+		return Object.keys(errors).length === 0;
+	};
+
+	// Function to handle form submission
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		// Validate form and check if it's valid
+		const isValid = validateForm();
+		if (!isValid) {
+			return; // Don't proceed if validation fails
+		}
+
+		// Set loading state and start signup process
+		setLoading(true);
+
+		try {
+			// Attempt signup using Supabase
+			const {
+				data: { user },
+				error,
+			} = await supabase.auth.signUp({
+				email,
+				password,
+				options: {
+					emailRedirectTo: `${location.origin}/auth/callback`,
+				},
+			});
+
+			// Update loading state and handle response
+			setLoading(false);
+			if (error) {
+				alert('Supabase error: ' + error.message);
+			} else if (user.identities.length === 0) {
+				// User already exists with this email
+				alert('A user with this email already exists');
+			} else {
+				// Successful signup with no existing user
+				router.push("/"); // Redirect page to home page
+				console.log(user); // Log user data for debug
+				alert(
+					'A confirmation link has been sent to your email, Verify your account to continue'
+				);
+			}
+		} catch (error) {
+			// Handle unexpected errors
+			alert('catch error: ' + error.message);
+		}
+	};
+
+	return (
+		<div>
+			{/* spinner displays loading animation when loading is true */}
+			{loading && <Spinner />}
+
+			{/* Signup form */}
+			<div className="lg:flex">
+        <div
+          className="lg:w-[720px] h-[100vh] lg:ps-[247px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
           style={{
             background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
           }}
@@ -114,18 +216,20 @@ const Signup = () => {
           <form className="mt-[16px]" onSubmit={handleSubmit}>
             <label className="text-[#515458] text-[12px] font-[500] font-Poppins">
               user name
+            <label className="text-[#515458] text-[12px] font-[500] font-Poppins mt-[22px]">
+              Email
             </label>
             <input
               type="text"
               placeholder="enter user name"
               className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] font-Poppins outline-none lg:w-[364px] xs:w-[100%] md:w-[600px] login-input-text"
+              placeholder="enter email"
+              className="text-[#575757] bg-[#fff] border-[#B7BFC7] border-[1px] border-solid rounded-[8px] text-[16px] font-[400] leading-[24px] font-Poppins mt-[4px] outline-none lg:w-[364px] xs:w-[100%] md:w-[600px]"
               style={{ padding: "12px 0px 12px 12px", height: "48px" }}
-              value={userName}
-              onChange={handleUserNameChange}
+              value={email}
+              onChange={handleEmailChange}
             />
-            {errors.userName && (
-              <p className="text-red-500">{errors.userName}</p>
-            )}{" "}
+            {errors.email && <p className="text-red-500">{errors.email}</p>}
             {/* Display error message */}
             <label className="text-[#515458] text-[12px] font-[500] font-Poppins">
               password
@@ -171,8 +275,8 @@ const Signup = () => {
           </form>
         </div>
       </div>
-    </div>
-  );
+		</div>
+	);
 };
 
 export default Signup;
