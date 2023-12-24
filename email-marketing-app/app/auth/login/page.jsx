@@ -76,15 +76,15 @@ const Login = () => {
   return (
     <div>
       <div className="lg:flex">
-       <div>
+       <div  className="lg:w-[720px] h-[100vh]"
+            style={{
+              background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
+            }}>
           <h1 className="text-[#17181A] text-[35px] ps-[1rem] font-[700] leading-[64px] font-Poppins">
             MailBlink
           </h1>
         <div
-            className="lg:w-[720px] lg:ps-[190px] lg:pr-[109px] xs:ps-[10px] pt-[190px]"
-            style={{
-              background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
-            }}
+           className="lg:w-[720px] lg:ps-[190px] lg:pr-[109px] xs:ps-[10px] pt-[190px]"
           >
             <h3 className="text-[#17181A] text-[48px] font-[700] leading-[64px] font-Poppins">
               Welcome back <br /> to MailBlink
@@ -97,7 +97,7 @@ const Login = () => {
             />
           </div>
        </div>
-        <div className="lg:w-[720px] h-[100vh] bg-[#fff] lg:ps-[109px] xs:ps-[10px] lg:pt-[140px] xs:pt-[100px]  xs:px-[0.85rem] md:px-[0.85rem]">
+        <div className="lg:w-[720px] bg-[#fff] lg:ps-[109px] xs:ps-[10px] lg:pt-[140px] xs:pt-[100px]  xs:px-[0.85rem] md:px-[0.85rem]">
           <h3 className="text-[#17181A] text-[24px] font-[600] leading-[32px] font-Poppins lg:ms-[9rem] xs:ms-[9rem] md:ms-[20rem]">
             Login
           </h3>

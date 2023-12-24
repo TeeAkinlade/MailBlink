@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaArrowRight } from "react-icons/fa"
+// import Nav from '././home/nav/nav'
 
 
 const Legal = () => {
   return (
     <div>
+      {/* <Nav/> */}
       <div className='pt-[7rem] pb-[7rem] bg-[#fff] xs:px-[0.75rem] lg:px-[0rem]'>
         <div className='lg:flex gap-[5rem] items-center'>
           <div className='lg:ms-[150px]'>

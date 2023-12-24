@@ -75,15 +75,17 @@ const Signup = () => {
   return (
     <div>
       <div className="lg:flex">
-       <div>
+       <div
+          className="lg:w-[720px] h-[100vh]"
+          style={{
+            background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
+          }}
+        >
             <h1 className="text-[#17181A] text-[35px] ps-[1rem] font-[700] leading-[64px] font-Poppins">
               MailBlink
             </h1>
         <div
-            className="lg:w-[720px] lg:ps-[140px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
-            style={{
-              background: `linear-gradient(141deg, #F5F0FF 0%, #EFF6FE 50.36%, #EDFAF5 100%)`,
-            }}
+            className="lg:ps-[110px] lg:pr-[109px] xs:ps-[10px] pt-[160px]"
           >
             <h3 className="text-[#17181A] text-[32px] font-[700] leading-[40px] font-Poppins mt-[15px] flex">
               We are mailblink <br /> So are you.{" "}
@@ -105,7 +107,7 @@ const Signup = () => {
             </p>
           </div>
        </div>
-        <div className="lg:w-[720px] h-[100vh] bg-[#fff] lg:ps-[109px] lg:pt-[160px] xs:pt-[100px] xs:ps-[10px] xs:px-[0.85rem] md:px-[0.85rem]">
+        <div className="lg:w-[720px] bg-[#fff] lg:ps-[109px] lg:pt-[160px] xs:pt-[100px] xs:ps-[10px] xs:px-[0.85rem] md:px-[0.85rem]">
           <h3 className="text-[#17181A] text-[24px] font-[600] leading-[32px] font-Poppins ms-[1rem]">
             Create a personal account
           </h3>

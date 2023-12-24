@@ -3,7 +3,7 @@ import React from "react";
 const Terms = () => {
   return (
     <div className='bg-[#fff]'>
-      <div className='lg:ps-[12rem] xs:ps-[1.8rem] px-[0.75rem] md:px-[1rem] lg:w-[85%] pt-[5rem]'>
+      <div className='lg:ps-[3rem] xs:ps-[1.8rem] px-[0.75rem] md:px-[1rem] lg:w-[85%] pt-[5rem]'>
         <h1 className='text-[#111827] text-[30px] leading-[36px] font-[800] font-poppins lg:ms-[-3rem]'>Terms of Use</h1>
         <h1 className='text-[17px] font-[700] items-justify mt-5 underline'>Acceptance of the Terms of Use</h1>
         <p className='text-[1rem] font-[400] mt-5 font-poppins items-justify'>These terms of use are entered into by and between you (“you“ or “your”) and mailblink Inc. ( “we,” “us” or “our”). The following terms and conditions, together with any documents they expressly incorporate by reference (collectively, “Terms of Use”), govern your access to and use of our products, functionality and services, including without limitation, those provided through https://www.mailblink.com/ (collectively, “mailblink”), whether as a guest or a registered user.</p>

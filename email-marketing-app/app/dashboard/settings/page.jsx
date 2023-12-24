@@ -5,6 +5,7 @@ import React, { useState, useEffect} from 'react';
 // import ImageUploader from "./Uploader"
 
 const Setting = () => {
+
   const [firstName, setFirstName] = useState(''); 
   const [lastName, setLastName] = useState(''); 
   const [userName, setUserName] = useState(''); 
@@ -14,11 +15,11 @@ const Setting = () => {
   const [errors, setErrors] = useState({}); 
   const [isFormValid, setIsFormValid] = useState(false); 
 
-  // Submit 
-  useEffect(() => { 
-    validateForm(); 
-}, [userName, email, ]); 
-// Validate form 
+   // Submit 
+   useEffect(() => { 
+     validateForm(); 
+ }, [userName, email, ]); 
+ // Validate form 
 const validateForm = () => { 
     let errors = {}; 
 
@@ -35,7 +36,7 @@ const validateForm = () => {
     setErrors(errors); 
     setIsFormValid(Object.keys(errors).length === 0); 
 }; 
-// Submit 
+ // Submit 
 const handleSubmit = () => { 
     if (isFormValid) { 
         console.log('Form submitted successfully!'); 
@@ -43,6 +44,7 @@ const handleSubmit = () => {
         console.log('Form has errors. Please correct them.'); 
     } 
 }; 
+
 
   return (
     <main className="mt-5 justify-center items-center flex flex-col " >

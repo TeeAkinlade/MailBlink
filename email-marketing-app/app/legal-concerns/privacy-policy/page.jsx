@@ -3,7 +3,7 @@ import React from "react";
 const Privacy = () => {
   return (
     <div className='bg-[#fff]'>
-      <div className='lg:ps-[12rem] xs:ps-[1.8rem] px-[0.75rem] lg:w-[85%] pt-[5rem]'>
+      <div className='lg:ps-[3rem] xs:ps-[1.8rem] px-[0.75rem] lg:w-[85%] pt-[5rem]'>
         <ol className='list-decimal'>
           <h1 className='text-[#111827] text-[30px] leading-[36px] font-[800] font-poppins lg:ms-[-3rem]'>Privacy Policy</h1>
           <li className='text-[17px] font-[700] items-justify mt-5'>Introduction</li>
